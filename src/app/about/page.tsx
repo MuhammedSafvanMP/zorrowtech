@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, TrendingUp, Shield, Rocket } from "lucide-react";
-import { Scene3D } from "@/components/3d-scene";
+import {  Scene3D } from "@/components/3d-scene";
 import { StaggeredText } from "@/components/animated-text";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="default" />
+          <Scene3D />
         </div>
+      <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -24,7 +24,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-violet-600/20 text-violet-300 border-violet-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <Award className="w-4 h-4 mr-2" />
               About Zorrow Tech
             </Badge>

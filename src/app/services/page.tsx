@@ -96,14 +96,18 @@ export default function ServicesPage() {
     },
   ]
 
+  const openWhatsApp = () => {
+    window.open("https://wa.me/919876543210", "_blank") // ✅ replace with your WhatsApp number
+  }
+
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="services" />
+          <Scene3D  />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-violet-900/20 to-black" />
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 from-black via-black/40 to-black" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -112,7 +116,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-indigo-600/20 text-indigo-300 border-indigo-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <Cpu className="w-4 h-4 mr-2" />
               Our Services
             </Badge>
@@ -178,6 +182,7 @@ export default function ServicesPage() {
                     </div>
 
                     <Button
+                      onClick={openWhatsApp}
                       className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90 rounded-xl shadow-lg`}
                     >
                       Get Started <ArrowRight className="ml-2 w-4 h-4" />
@@ -192,6 +197,9 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <section className="py-32 relative">
+            <div className="absolute inset-0 opacity-30">
+          <Scene3D  />
+        </div>
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -216,12 +224,10 @@ export default function ServicesPage() {
                 className="text-center group"
               >
                 <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-3xl p-8 h-full group-hover:border-white/30 transition-all duration-500">
-                  <div className="text-6xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-4">
-                    {step.step}
-                  </div>
+                  <div className="text-6xl font-bold text-white mb-4">{step.step}</div>
                   <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
                   <p className="text-gray-300 mb-4">{step.description}</p>
-                  <Badge className="bg-violet-600/20 text-violet-300 border-violet-500/30">{step.duration}</Badge>
+                  <Badge className="bg-black text-white border border-white/20">{step.duration}</Badge>
                 </div>
               </motion.div>
             ))}

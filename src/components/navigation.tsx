@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Zap, MessageCircle } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Menu, X, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -21,17 +21,11 @@ export function Navigation() {
     { name: "Careers", href: "/careers" },
     { name: "Internships", href: "/internships" },
     { name: "Contact", href: "/contact" },
-  ]
+  ];
 
-  // Close mobile menu when route changes
   useEffect(() => {
-    setIsMenuOpen(false)
-  }, [pathname])
-
-  // Set loaded state immediately
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   return (
     <motion.nav
@@ -53,10 +47,16 @@ export function Navigation() {
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="w-12 h-12 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg"
+                className="relative w-8 h-8 md:w-12 md:h-12 bg-black/50 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden"
               >
-                <Zap className="w-7 h-7 text-white" />
+                <Image
+                  src="/zorrow.jpeg"
+                  alt="icon"
+                  fill
+                  className="object-cover rounded-2xl"
+                />
               </motion.div>
+
               <span className="text-2xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
                 Zorrow Tech
               </span>
@@ -66,7 +66,7 @@ export function Navigation() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item, index) => {
-              const isActive = pathname === item.href
+              const isActive = pathname === item.href;
               return (
                 <motion.div
                   key={item.name}
@@ -84,7 +84,7 @@ export function Navigation() {
                   >
                     {item.name}
                     <motion.div
-                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: isActive ? 1 : 0 }}
                       whileHover={{ scaleX: 1 }}
@@ -93,7 +93,7 @@ export function Navigation() {
                     />
                   </Link>
                 </motion.div>
-              )
+              );
             })}
           </div>
 
@@ -106,7 +106,7 @@ export function Navigation() {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link href="/contact">
-                <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 rounded-xl px-6 shadow-lg border border-white/20">
+                <Button className="w-full from-black via-black/40 to-black text-white border rounded-xl shadow-md">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Let's Talk
                 </Button>
@@ -115,14 +115,22 @@ export function Navigation() {
           </motion.div>
 
           {/* Mobile Menu Button */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
             <Button
               variant="ghost"
               size="sm"
               className="lg:hidden text-white hover:bg-white/10 rounded-xl"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </Button>
           </motion.div>
         </div>
@@ -140,7 +148,7 @@ export function Navigation() {
           >
             <div className="container mx-auto px-6 py-6">
               {navItems.map((item, index) => {
-                const isActive = pathname === item.href
+                const isActive = pathname === item.href;
                 return (
                   <motion.div
                     key={item.name}
@@ -151,14 +159,16 @@ export function Navigation() {
                     <Link
                       href={item.href}
                       className={`block py-3 transition-colors text-lg ${
-                        isActive ? "text-white" : "text-gray-300 hover:text-white"
+                        isActive
+                          ? "text-white"
+                          : "text-gray-300 hover:text-white"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
                   </motion.div>
-                )
+                );
               })}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -167,7 +177,7 @@ export function Navigation() {
                 className="pt-6"
               >
                 <Link href="/contact">
-                  <Button className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 rounded-xl">
+                  <Button className="w-full from-black via-black/40 to-black text-white border rounded-xl shadow-md">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Let's Talk
                   </Button>
@@ -178,5 +188,5 @@ export function Navigation() {
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }

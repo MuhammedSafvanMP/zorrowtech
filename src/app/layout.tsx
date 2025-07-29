@@ -4,7 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { AIAssistant } from "@/components/ai-assistant"
-import { CustomCursor } from "@/components/custom-cursor"
+// import { CustomCursor } from "@/components/custom-cursor"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-black text-white overflow-x-hidden`}>
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <Navigation />
         {children}
         <AIAssistant />

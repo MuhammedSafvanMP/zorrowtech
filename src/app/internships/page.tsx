@@ -181,9 +181,9 @@ export default function InternshipsPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="services" />
+          <Scene3D  />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-900/20 to-black" />
+        <div className="absolute inset-0 from-black via-black/40 to-black" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -192,7 +192,7 @@ export default function InternshipsPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-indigo-600/20 text-indigo-300 border-indigo-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <GraduationCap className="w-4 h-4 mr-2" />
               Internships & Learning
             </Badge>
@@ -228,7 +228,7 @@ export default function InternshipsPage() {
               >
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
                   <div className="text-indigo-400 mb-2 flex justify-center">{stat.icon}</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl font-bold bg-gradient-to-r text-white bg-clip-text  mb-2">
                     {stat.number}
                   </div>
                   <div className="text-gray-400 text-sm font-medium">{stat.label}</div>

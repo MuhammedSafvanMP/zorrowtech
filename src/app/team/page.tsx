@@ -9,7 +9,7 @@ import { Scene3D } from "@/components/3d-scene"
 import { StaggeredText } from "@/components/animated-text"
 
 export default function TeamPage() {
-  const team = [
+ const team = [
     {
       name: "Alex Rodriguez",
       role: "CEO & Co-Founder",
@@ -96,9 +96,9 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="team" />
+          <Scene3D />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-900/20 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/30 to-black" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -107,7 +107,7 @@ export default function TeamPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-indigo-600/20 text-indigo-300 border-indigo-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <Users className="w-4 h-4 mr-2" />
               Leadership Team
             </Badge>
@@ -157,14 +157,14 @@ export default function TeamPage() {
 
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-violet-400 font-semibold mb-4 text-lg">{member.role}</p>
+                    <p className="text-gray-200 font-semibold mb-4 text-lg">{member.role}</p>
                     <p className="text-gray-300 mb-6 leading-relaxed">{member.bio}</p>
 
                     {/* Stats */}
                     <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-white/5 rounded-xl">
                       {Object.entries(member.stats).map(([key, value], idx) => (
                         <div key={idx} className="text-center">
-                          <div className="text-lg font-bold text-violet-400">{value}</div>
+                          <div className="text-lg font-bold text-white">{value}</div>
                           <div className="text-xs text-gray-400 capitalize">{key}</div>
                         </div>
                       ))}
@@ -250,7 +250,7 @@ export default function TeamPage() {
               >
                 <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500">
                   <div className="text-4xl mb-4">{stat.icon}</div>
-                  <div className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-2">
+                  <div className="text-4xl font-bold text-white mb-2">
                     {stat.number}
                   </div>
                   <div className="text-gray-400 font-medium">{stat.label}</div>

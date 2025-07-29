@@ -12,7 +12,7 @@ import { Suspense } from "react"
 function Scene3DFallback() {
   return (
     <div className="absolute inset-0 w-full h-full opacity-40">
-      <div className="w-full h-full bg-gradient-to-br from-violet-900/20 via-purple-900/20 to-indigo-900/20 animate-pulse" />
+      <div className="w-full h-full bg-gradient-to-br from-[#92270a] via-black/20 to-black/40 animate-pulse" />
     </div>
   )
 }
@@ -28,35 +28,23 @@ export default function HomePage() {
         {/* 3D Background with Suspense */}
         <Suspense fallback={<Scene3DFallback />}>
           <motion.div style={{ y: backgroundY }} className="absolute inset-0 w-full h-full opacity-40">
-            <Scene3D variant="default" />
+            <Scene3D  />
           </motion.div>
         </Suspense>
 
         {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-violet-900/30 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/40 to-black" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
         {/* Hero Content */}
         <div className="container mx-auto px-6 text-center relative z-10">
-          {/* Badge - Show immediately */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <Badge className="bg-gradient-to-r from-violet-600/30 to-indigo-600/30 text-violet-300 border-violet-500/50 px-6 py-3 text-base backdrop-blur-sm mb-8">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Transforming Ideas Into Digital Reality
-            </Badge>
-          </motion.div> */}
-
-          {/* Main Heading - Show quickly */}
+          {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
               Build The Future
             </h1>
           </motion.div>
@@ -69,8 +57,8 @@ export default function HomePage() {
             className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 max-w-5xl mx-auto leading-relaxed"
           >
             We craft exceptional digital experiences powered by{" "}
-            <span className="text-violet-400 font-semibold">AI</span> and{" "}
-            <span className="text-indigo-400 font-semibold">cutting-edge technology</span> that drive exponential growth
+            <span className="text-white font-semibold">AI</span> and{" "}
+            <span className="text-white font-semibold">cutting-edge technology</span> that drive exponential growth
             for forward-thinking companies worldwide.
           </motion.div>
 
@@ -85,7 +73,7 @@ export default function HomePage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold shadow-2xl border border-white/20"
+                  className="bg-white text-black px-10 py-4 rounded-2xl text-lg font-semibold shadow-2xl border border-white/20"
                 >
                   Start Your Project <ArrowRight className="ml-2 w-6 h-6" />
                 </Button>
@@ -104,7 +92,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Stats */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -125,15 +113,13 @@ export default function HomePage() {
                 className="text-center group"
               >
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 group-hover:border-white/20 transition-all duration-300">
-                  <div className="text-violet-400 mb-2 flex justify-center">{stat.icon}</div>
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-2">
-                    {stat.number}
-                  </div>
+                  <div className="text-white mb-2 flex justify-center">{stat.icon}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Enhanced Scroll Indicator */}
@@ -153,7 +139,7 @@ export default function HomePage() {
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2.5, ease: "easeInOut" }}
-                className="w-1 h-3 bg-gradient-to-b from-violet-400 to-indigo-400 rounded-full mt-2"
+                className="w-1 h-3 bg-white rounded-full mt-2"
               />
             </div>
             <motion.div
@@ -161,77 +147,90 @@ export default function HomePage() {
               transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2, ease: "easeInOut", delay: 0.5 }}
               className="mt-2"
             >
-              <ChevronDown className="w-5 h-5 text-violet-400" />
+              <ChevronDown className="w-5 h-5 text-white" />
             </motion.div>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Quick Links Section */}
-      <section className="py-32 relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
-              Explore Our Expertise
-            </h2>
-          </motion.div>
+          {/* Quick Links Section */}
+    {/* Explore Our Expertise Section */}
+<section className="py-32 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-black via-black/70 to-black z-0" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Services",
-                href: "/services",
-                description: "Cutting-edge solutions",
-                color: "from-blue-600 to-cyan-600",
-              },
-              {
-                title: "Projects",
-                href: "/projects",
-                description: "Success stories",
-                color: "from-purple-600 to-pink-600",
-              },
-              { title: "Team", href: "/team", description: "Meet our experts", color: "from-green-600 to-emerald-600" },
-              {
-                title: "Contact",
-                href: "/contact",
-                description: "Let's build together",
-                color: "from-orange-600 to-red-600",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.8 }}
-                viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="group"
-              >
-                <Link href={item.href}>
-                  <div
-                    className={`h-64 bg-gradient-to-br ${item.color} rounded-3xl p-8 text-white relative overflow-hidden cursor-pointer`}
-                  >
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                    <div className="relative z-10 h-full flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                        <p className="text-white/80">{item.description}</p>
-                      </div>
-                      <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-6 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="text-center mb-20"
+    >
+      <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-100 via-white to-gray-300 bg-clip-text text-transparent">
+        Explore Our Expertise
+      </h2>
+      <p className="text-gray-400 max-w-2xl mx-auto">
+        Discover what makes us the trusted partner for innovation, design, and growth.
+      </p>
+    </motion.div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          title: "Services",
+          href: "/services",
+          description: "AI-driven, scalable solutions",
+          icon: <Sparkles className="w-6 h-6" />,
+        },
+        {
+          title: "Projects",
+          href: "/projects",
+          description: "Proven success stories",
+          icon: <Target className="w-6 h-6" />,
+        },
+        {
+          title: "Team",
+          href: "/team",
+          description: "Meet our experts",
+          icon: <Users className="w-6 h-6" />,
+        },
+        {
+          title: "Contact",
+          href: "/contact",
+          description: "Bring ideas to life",
+          icon: <Globe className="w-6 h-6" />,
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1, duration: 0.8 }}
+          viewport={{ once: true, margin: "-50px" }}
+          whileHover={{ scale: 1.05, rotateX: 3 }}
+          className="group"
+        >
+          <Link href={item.href} className="block">
+            <div className="relative h-64 rounded-3xl p-8 border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+              <div className="absolute -inset-px bg-gradient-to-br from-violet-600/30 to-indigo-600/30 opacity-0 group-hover:opacity-20 transition-opacity rounded-3xl pointer-events-none" />
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-white/10 rounded-full text-white">
+                  {item.icon}
+                </div>
+                <h3 className="text-2xl font-bold">{item.title}</h3>
+              </div>
+              <p className="text-gray-300 mb-4">{item.description}</p>
+
+              <ArrowRight className="w-6 h-6 text-gray-300 group-hover:translate-x-2 transition-transform" />
+            </div>
+          </Link>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   )
 }

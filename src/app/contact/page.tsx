@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Lightbulb,
   Mail,
@@ -23,9 +23,10 @@ import {
   Twitter,
   Navigation,
   Clock,
-} from "lucide-react"
-import { Scene3D } from "@/components/3d-scene"
-import { StaggeredText } from "@/components/animated-text"
+} from "lucide-react";
+import { Scene3D } from "@/components/3d-scene";
+import { StaggeredText } from "@/components/animated-text";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -33,7 +34,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="contact" />
+          <Scene3D  />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />
 
@@ -44,19 +45,23 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-green-600/20 text-green-300 border-green-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <Lightbulb className="w-4 h-4 mr-2" />
               Let's Connect
             </Badge>
-            <StaggeredText text="Start Your Journey" className="text-5xl md:text-7xl font-bold mb-8" />
+            <StaggeredText
+              text="Start Your Journey"
+              className="text-5xl md:text-7xl font-bold mb-8"
+            />
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
               className="text-xl text-gray-300 max-w-4xl mx-auto"
             >
-              Ready to transform your business with cutting-edge technology? Let's discuss how we can bring your vision
-              to life and create something extraordinary together.
+              Ready to transform your business with cutting-edge technology?
+              Let's discuss how we can bring your vision to life and create
+              something extraordinary together.
             </motion.p>
           </motion.div>
         </div>
@@ -74,7 +79,9 @@ export default function ContactPage() {
             >
               <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 backdrop-blur-sm">
                 <CardContent className="p-10">
-                  <h3 className="text-3xl font-bold text-white mb-8">Get In Touch</h3>
+                  <h3 className="text-3xl font-bold text-white mb-8">
+                    Get In Touch
+                  </h3>
                   <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
@@ -100,8 +107,11 @@ export default function ContactPage() {
                       rows={6}
                       className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 rounded-xl text-lg focus:ring-2 focus:ring-violet-500"
                     />
-                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Button className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 rounded-xl h-14 text-lg font-semibold shadow-2xl">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button className="w-full  from-black via-black/40 to-black rounded-xl h-14 text-lg font-semibold shadow-2xl">
                         Send Message <Send className="ml-2 w-5 h-5" />
                       </Button>
                     </motion.div>
@@ -118,7 +128,9 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-3xl font-bold text-white mb-8">Contact Information</h3>
+                <h3 className="text-3xl font-bold text-white mb-8">
+                  Contact Information
+                </h3>
                 <div className="space-y-6">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -128,8 +140,12 @@ export default function ContactPage() {
                       <Mail className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-white text-lg">Email</div>
-                      <div className="text-violet-400">hello@zorrowtech.com</div>
+                      <div className="font-semibold text-white text-lg">
+                        Email
+                      </div>
+                      <div className="text-violet-400">
+                        hello@zorrowtech.com
+                      </div>
                     </div>
                   </motion.div>
 
@@ -141,7 +157,9 @@ export default function ContactPage() {
                       <Phone className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-white text-lg">Phone</div>
+                      <div className="font-semibold text-white text-lg">
+                        Phone
+                      </div>
                       <div className="text-green-400">+1 (555) 123-4567</div>
                     </div>
                   </motion.div>
@@ -154,7 +172,9 @@ export default function ContactPage() {
                       <MapPin className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-white text-lg">Office</div>
+                      <div className="font-semibold text-white text-lg">
+                        Office
+                      </div>
                       <div className="text-purple-400">San Francisco, CA</div>
                     </div>
                   </motion.div>
@@ -166,15 +186,35 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-to-r from-violet-600/20 via-purple-600/20 to-indigo-600/20 rounded-3xl p-8 border border-white/20 backdrop-blur-sm"
               >
-                <h4 className="text-2xl font-bold text-white mb-6">Why Partner With Us?</h4>
+                <h4 className="text-2xl font-bold text-white mb-6">
+                  Why Partner With Us?
+                </h4>
                 <div className="space-y-4">
                   {[
-                    { icon: <Rocket className="w-5 h-5" />, text: "Proven track record with 500+ successful projects" },
-                    { icon: <Zap className="w-5 h-5" />, text: "Rapid development with agile methodologies" },
-                    { icon: <Shield className="w-5 h-5" />, text: "Enterprise-grade security and compliance" },
-                    { icon: <Globe className="w-5 h-5" />, text: "Global team available 24/7 support" },
-                    { icon: <Brain className="w-5 h-5" />, text: "Cutting-edge AI and technology stack" },
-                    { icon: <TrendingUp className="w-5 h-5" />, text: "Focus on measurable business outcomes" },
+                    {
+                      icon: <Rocket className="w-5 h-5" />,
+                      text: "Proven track record with 500+ successful projects",
+                    },
+                    {
+                      icon: <Zap className="w-5 h-5" />,
+                      text: "Rapid development with agile methodologies",
+                    },
+                    {
+                      icon: <Shield className="w-5 h-5" />,
+                      text: "Enterprise-grade security and compliance",
+                    },
+                    {
+                      icon: <Globe className="w-5 h-5" />,
+                      text: "Global team available 24/7 support",
+                    },
+                    {
+                      icon: <Brain className="w-5 h-5" />,
+                      text: "Cutting-edge AI and technology stack",
+                    },
+                    {
+                      icon: <TrendingUp className="w-5 h-5" />,
+                      text: "Focus on measurable business outcomes",
+                    },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -207,8 +247,8 @@ export default function ContactPage() {
               Visit Our Office
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Located in the heart of San Francisco's tech district, our office is easily accessible and designed for
-              innovation.
+              Located in the heart of San Francisco's tech district, our office
+              is easily accessible and designed for innovation.
             </p>
           </motion.div>
 
@@ -246,7 +286,9 @@ export default function ContactPage() {
             >
               <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 backdrop-blur-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-white mb-6">Office Details</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6">
+                    Office Details
+                  </h3>
 
                   <div className="space-y-6">
                     <motion.div
@@ -257,7 +299,9 @@ export default function ContactPage() {
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <div className="font-semibold text-white text-lg mb-1">Address</div>
+                        <div className="font-semibold text-white text-lg mb-1">
+                          Address
+                        </div>
                         <div className="text-blue-400">
                           1355 Market Street, Suite 900
                           <br />
@@ -276,7 +320,9 @@ export default function ContactPage() {
                         <Clock className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <div className="font-semibold text-white text-lg mb-1">Office Hours</div>
+                        <div className="font-semibold text-white text-lg mb-1">
+                          Office Hours
+                        </div>
                         <div className="text-green-400">
                           Monday - Friday: 9:00 AM - 6:00 PM
                           <br />
@@ -295,7 +341,9 @@ export default function ContactPage() {
                         <Navigation className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <div className="font-semibold text-white text-lg mb-1">Getting Here</div>
+                        <div className="font-semibold text-white text-lg mb-1">
+                          Getting Here
+                        </div>
                         <div className="text-purple-400">
                           • BART: Civic Center Station (2 blocks)
                           <br />• Muni: Multiple lines nearby
@@ -306,10 +354,17 @@ export default function ContactPage() {
                     </motion.div>
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="mt-8">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="mt-8"
+                  >
                     <Button
                       onClick={() =>
-                        window.open("https://maps.google.com/?q=1355+Market+Street+San+Francisco+CA", "_blank")
+                        window.open(
+                          "https://maps.google.com/?q=1355+Market+Street+San+Francisco+CA",
+                          "_blank"
+                        )
                       }
                       className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-xl h-14 text-lg font-semibold shadow-2xl"
                     >
@@ -323,14 +378,24 @@ export default function ContactPage() {
               {/* Nearby Landmarks */}
               <Card className="bg-gradient-to-br from-gray-900/80 to-black/80 border-white/10 backdrop-blur-sm">
                 <CardContent className="p-6">
-                  <h4 className="text-xl font-bold text-white mb-4">Nearby Landmarks</h4>
+                  <h4 className="text-xl font-bold text-white mb-4">
+                    Nearby Landmarks
+                  </h4>
                   <div className="space-y-3">
                     {[
                       { name: "Twitter HQ", distance: "0.2 miles", icon: "🏢" },
                       { name: "Uber HQ", distance: "0.3 miles", icon: "🚗" },
-                      { name: "Civic Center Plaza", distance: "0.1 miles", icon: "🏛️" },
+                      {
+                        name: "Civic Center Plaza",
+                        distance: "0.1 miles",
+                        icon: "🏛️",
+                      },
                       { name: "UN Plaza", distance: "0.2 miles", icon: "🌍" },
-                      { name: "SOMA District", distance: "0.5 miles", icon: "🏙️" },
+                      {
+                        name: "SOMA District",
+                        distance: "0.5 miles",
+                        icon: "🏙️",
+                      },
                     ].map((landmark, index) => (
                       <motion.div
                         key={index}
@@ -343,7 +408,9 @@ export default function ContactPage() {
                           <span className="text-xl mr-3">{landmark.icon}</span>
                           <span>{landmark.name}</span>
                         </div>
-                        <span className="text-sm text-blue-400">{landmark.distance}</span>
+                        <span className="text-sm text-blue-400">
+                          {landmark.distance}
+                        </span>
                       </motion.div>
                     ))}
                   </div>
@@ -363,7 +430,10 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <StaggeredText text="Frequently Asked Questions" className="text-4xl md:text-6xl font-bold mb-8" />
+            <StaggeredText
+              text="Frequently Asked Questions"
+              className="text-4xl md:text-6xl font-bold mb-8"
+            />
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -407,7 +477,9 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-500"
               >
-                <h4 className="text-xl font-bold text-white mb-3">{faq.question}</h4>
+                <h4 className="text-xl font-bold text-white mb-3">
+                  {faq.question}
+                </h4>
                 <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
@@ -427,9 +499,16 @@ export default function ContactPage() {
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
-                className="w-12 h-12 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center"
+                className="w-12 h-12  bg-black/50 rounded-2xl flex items-center justify-center"
               >
-                <Zap className="w-6 h-6 text-white" />
+                {/* <Zap className="w-6 h-6 text-white" /> */}
+                <Image
+                  src="/zorrow.jpeg"
+                  alt="icon"
+                  width={8}
+                  height={8}
+                  className="object-cover rounded-2xl w-6 h-6"
+                />
               </motion.div>
               <span className="text-2xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
                 Zorrow Tech
@@ -437,17 +516,38 @@ export default function ContactPage() {
             </motion.div>
 
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Transforming ideas into digital reality with cutting-edge technology solutions.
+              Transforming ideas into digital reality with cutting-edge
+              technology solutions.
             </p>
 
             <div className="flex justify-center gap-4 mb-6">
               {[
-                { icon: <Github className="w-5 h-5" />, href: "#", color: "hover:text-gray-300" },
-                { icon: <Linkedin className="w-5 h-5" />, href: "#", color: "hover:text-blue-400" },
-                { icon: <Twitter className="w-5 h-5" />, href: "#", color: "hover:text-sky-400" },
-                { icon: <Mail className="w-5 h-5" />, href: "#", color: "hover:text-violet-400" },
+                {
+                  icon: <Github className="w-5 h-5" />,
+                  href: "#",
+                  color: "hover:text-gray-300",
+                },
+                {
+                  icon: <Linkedin className="w-5 h-5" />,
+                  href: "#",
+                  color: "hover:text-blue-400",
+                },
+                {
+                  icon: <Twitter className="w-5 h-5" />,
+                  href: "#",
+                  color: "hover:text-sky-400",
+                },
+                {
+                  icon: <Mail className="w-5 h-5" />,
+                  href: "#",
+                  color: "hover:text-violet-400",
+                },
               ].map((social, index) => (
-                <motion.div key={index} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <Button
                     variant="ghost"
                     size="sm"
@@ -460,12 +560,12 @@ export default function ContactPage() {
             </div>
 
             <div className="text-gray-500 text-sm">
-              © 2024 Zorrow Tech IT Solutions. All rights reserved. | Crafted with{" "}
-              <span className="text-red-400">❤️</span> in San Francisco
+              © 2024 Zorrow Tech IT Solutions. All rights reserved. | Crafted
+              with <span className="text-red-400">❤️</span> in San Francisco
             </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { motion, AnimatePresence } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Briefcase,
   MapPin,
@@ -23,15 +23,15 @@ import {
   ChevronRight,
   X,
   Mail,
-} from "lucide-react"
-import { Scene3D } from "@/components/3d-scene"
-import { useState } from "react"
+} from "lucide-react";
+import { Scene3D } from "@/components/3d-scene";
+import { useState } from "react";
 
 export default function CareersPage() {
-  const [currentPage, setCurrentPage] = useState(1)
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
-  const [selectedJob, setSelectedJob] = useState<any>(null)
-  const jobsPerPage = 3
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<any>(null);
+  const jobsPerPage = 3;
 
   const jobs = [
     {
@@ -51,7 +51,12 @@ export default function CareersPage() {
         "Knowledge of microservices architecture",
         "Experience with AI/ML integration",
       ],
-      benefits: ["Equity package", "Health insurance", "Remote work", "Learning budget"],
+      benefits: [
+        "Equity package",
+        "Health insurance",
+        "Remote work",
+        "Learning budget",
+      ],
       gradient: "from-blue-600 to-cyan-600",
     },
     {
@@ -62,7 +67,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$140k - $200k",
       experience: "4+ years",
-      description: "Lead AI initiatives and develop machine learning models that power our intelligent applications.",
+      description:
+        "Lead AI initiatives and develop machine learning models that power our intelligent applications.",
       requirements: [
         "PhD/MS in Computer Science or related field",
         "4+ years of ML/AI experience",
@@ -70,7 +76,12 @@ export default function CareersPage() {
         "Experience with NLP and Computer Vision",
         "Published research papers preferred",
       ],
-      benefits: ["Stock options", "Conference budget", "Research time", "Top-tier equipment"],
+      benefits: [
+        "Stock options",
+        "Conference budget",
+        "Research time",
+        "Top-tier equipment",
+      ],
       gradient: "from-purple-600 to-pink-600",
     },
     {
@@ -81,7 +92,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$100k - $150k",
       experience: "4+ years",
-      description: "Create beautiful, intuitive user experiences that delight millions of users worldwide.",
+      description:
+        "Create beautiful, intuitive user experiences that delight millions of users worldwide.",
       requirements: [
         "4+ years of UX/UI design experience",
         "Proficiency in Figma, Sketch, Adobe Creative Suite",
@@ -89,7 +101,12 @@ export default function CareersPage() {
         "Experience with design systems",
         "User research and testing experience",
       ],
-      benefits: ["Creative freedom", "Design tools budget", "Flexible hours", "Team retreats"],
+      benefits: [
+        "Creative freedom",
+        "Design tools budget",
+        "Flexible hours",
+        "Team retreats",
+      ],
       gradient: "from-green-600 to-emerald-600",
     },
     {
@@ -100,7 +117,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$110k - $160k",
       experience: "3+ years",
-      description: "Build and maintain scalable infrastructure that supports millions of users globally.",
+      description:
+        "Build and maintain scalable infrastructure that supports millions of users globally.",
       requirements: [
         "3+ years of DevOps experience",
         "Expertise in Kubernetes, Docker",
@@ -108,7 +126,12 @@ export default function CareersPage() {
         "CI/CD pipeline experience",
         "Infrastructure as Code (Terraform)",
       ],
-      benefits: ["Certification budget", "On-call compensation", "Latest tech", "Growth opportunities"],
+      benefits: [
+        "Certification budget",
+        "On-call compensation",
+        "Latest tech",
+        "Growth opportunities",
+      ],
       gradient: "from-orange-600 to-red-600",
     },
     {
@@ -128,7 +151,12 @@ export default function CareersPage() {
         "Technical background preferred",
         "Experience with agile methodologies",
       ],
-      benefits: ["Product ownership", "Strategy involvement", "Cross-team collaboration", "Impact visibility"],
+      benefits: [
+        "Product ownership",
+        "Strategy involvement",
+        "Cross-team collaboration",
+        "Impact visibility",
+      ],
       gradient: "from-indigo-600 to-purple-600",
     },
     {
@@ -148,7 +176,12 @@ export default function CareersPage() {
         "CRM experience (Salesforce preferred)",
         "Tech industry background preferred",
       ],
-      benefits: ["Uncapped commission", "Sales incentives", "Travel opportunities", "Client events"],
+      benefits: [
+        "Uncapped commission",
+        "Sales incentives",
+        "Travel opportunities",
+        "Client events",
+      ],
       gradient: "from-teal-600 to-blue-600",
     },
     {
@@ -159,7 +192,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$90k - $130k",
       experience: "3+ years",
-      description: "Build responsive, high-performance user interfaces using modern frontend technologies.",
+      description:
+        "Build responsive, high-performance user interfaces using modern frontend technologies.",
       requirements: [
         "3+ years of React experience",
         "Strong CSS and JavaScript skills",
@@ -167,7 +201,12 @@ export default function CareersPage() {
         "Knowledge of modern build tools",
         "Understanding of web performance optimization",
       ],
-      benefits: ["Remote work", "Flexible hours", "Learning budget", "Health insurance"],
+      benefits: [
+        "Remote work",
+        "Flexible hours",
+        "Learning budget",
+        "Health insurance",
+      ],
       gradient: "from-cyan-600 to-blue-600",
     },
     {
@@ -178,7 +217,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$100k - $140k",
       experience: "4+ years",
-      description: "Design and implement scalable backend systems and APIs that power our applications.",
+      description:
+        "Design and implement scalable backend systems and APIs that power our applications.",
       requirements: [
         "4+ years of backend development experience",
         "Strong knowledge of Node.js or Python",
@@ -186,7 +226,12 @@ export default function CareersPage() {
         "Understanding of microservices architecture",
         "Experience with cloud platforms",
       ],
-      benefits: ["Stock options", "Health insurance", "Remote work", "Professional development"],
+      benefits: [
+        "Stock options",
+        "Health insurance",
+        "Remote work",
+        "Professional development",
+      ],
       gradient: "from-violet-600 to-purple-600",
     },
     {
@@ -197,7 +242,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$120k - $170k",
       experience: "3+ years",
-      description: "Extract insights from data to drive business decisions and improve our products.",
+      description:
+        "Extract insights from data to drive business decisions and improve our products.",
       requirements: [
         "3+ years of data science experience",
         "Strong Python and R skills",
@@ -205,7 +251,12 @@ export default function CareersPage() {
         "Knowledge of statistical analysis",
         "Experience with data visualization tools",
       ],
-      benefits: ["Research budget", "Conference attendance", "Flexible schedule", "Top equipment"],
+      benefits: [
+        "Research budget",
+        "Conference attendance",
+        "Flexible schedule",
+        "Top equipment",
+      ],
       gradient: "from-emerald-600 to-teal-600",
     },
     {
@@ -216,7 +267,8 @@ export default function CareersPage() {
       type: "Full-time",
       salary: "$95k - $135k",
       experience: "3+ years",
-      description: "Develop high-quality mobile applications for iOS and Android platforms.",
+      description:
+        "Develop high-quality mobile applications for iOS and Android platforms.",
       requirements: [
         "3+ years of mobile development experience",
         "Proficiency in React Native or Flutter",
@@ -224,82 +276,95 @@ export default function CareersPage() {
         "Knowledge of mobile app deployment",
         "Understanding of mobile UI/UX principles",
       ],
-      benefits: ["Device allowance", "Remote work", "Flexible hours", "Health insurance"],
+      benefits: [
+        "Device allowance",
+        "Remote work",
+        "Flexible hours",
+        "Health insurance",
+      ],
       gradient: "from-pink-600 to-rose-600",
     },
-  ]
+  ];
 
   const benefits = [
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Health & Wellness",
-      description: "Comprehensive health, dental, and vision insurance plus wellness programs",
+      description:
+        "Comprehensive health, dental, and vision insurance plus wellness programs",
       color: "from-red-500 to-pink-500",
     },
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "Career Growth",
-      description: "Continuous learning opportunities, mentorship, and clear career progression paths",
+      description:
+        "Continuous learning opportunities, mentorship, and clear career progression paths",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Coffee className="w-8 h-8" />,
       title: "Work-Life Balance",
-      description: "Flexible hours, remote work options, and unlimited PTO policy",
+      description:
+        "Flexible hours, remote work options, and unlimited PTO policy",
       color: "from-amber-500 to-orange-500",
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Cutting-Edge Tech",
-      description: "Work with the latest technologies and tools, plus budget for learning and conferences",
+      description:
+        "Work with the latest technologies and tools, plus budget for learning and conferences",
       color: "from-purple-500 to-indigo-500",
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Global Impact",
-      description: "Build products used by millions worldwide and make a real difference",
+      description:
+        "Build products used by millions worldwide and make a real difference",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "Equity & Rewards",
-      description: "Competitive salary, equity packages, and performance-based bonuses",
+      description:
+        "Competitive salary, equity packages, and performance-based bonuses",
       color: "from-violet-500 to-purple-500",
     },
-  ]
+  ];
 
   const stats = [
     { number: "50+", label: "Team Members", icon: "👥" },
     { number: "15+", label: "Countries", icon: "🌍" },
     { number: "4.9/5", label: "Employee Rating", icon: "⭐" },
     { number: "95%", label: "Retention Rate", icon: "💎" },
-  ]
+  ];
 
   // Pagination logic
-  const totalPages = Math.ceil(jobs.length / jobsPerPage)
-  const startIndex = (currentPage - 1) * jobsPerPage
-  const endIndex = startIndex + jobsPerPage
-  const currentJobs = jobs.slice(startIndex, endIndex)
+  const totalPages = Math.ceil(jobs.length / jobsPerPage);
+  const startIndex = (currentPage - 1) * jobsPerPage;
+  const endIndex = startIndex + jobsPerPage;
+  const currentJobs = jobs.slice(startIndex, endIndex);
 
   const handleApplyClick = (job: any) => {
-    setSelectedJob(job)
-    setIsApplyModalOpen(true)
-  }
+    setSelectedJob(job);
+    setIsApplyModalOpen(true);
+  };
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page)
+    setCurrentPage(page);
     // Scroll to jobs section
-    document.getElementById("jobs-section")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document
+      .getElementById("jobs-section")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="team" />
+          <Scene3D  />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black" />
+        <div className="absolute inset-0 from-black via-black/40 to-black" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -308,7 +373,7 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-purple-600/20 text-purple-300 border-purple-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <Briefcase className="w-4 h-4 mr-2" />
               Join Our Team
             </Badge>
@@ -318,16 +383,19 @@ export default function CareersPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-20"
             >
-              <h2 className="text-5xl md:text-7xl font-bold mb-8">Build The Future With Us</h2>
+              <h2 className="text-5xl md:text-7xl font-bold mb-8">
+                Build The Future With Us
+              </h2>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
                 className="text-xl text-gray-300 max-w-4xl mx-auto"
               >
-                Join a team of world-class engineers, designers, and innovators building technology that impacts
-                millions of lives. We're looking for passionate individuals who want to shape the future of digital
-                experiences.
+                Join a team of world-class engineers, designers, and innovators
+                building technology that impacts millions of lives. We're
+                looking for passionate individuals who want to shape the future
+                of digital experiences.
               </motion.p>
             </motion.div>
 
@@ -344,10 +412,12 @@ export default function CareersPage() {
                 >
                   <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
                     <div className="text-3xl mb-2">{stat.icon}</div>
-                    <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2">
+                    <div className="text-3xl font-bold bg-gradient-to-r text-white bg-clip-text  mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
+                    <div className="text-gray-400 text-sm font-medium">
+                      {stat.label}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -371,10 +441,12 @@ export default function CareersPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-20"
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-8">Why Work With Us?</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                Why Work With Us?
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We believe in creating an environment where talented people can do their best work and grow their
-                careers.
+                We believe in creating an environment where talented people can
+                do their best work and grow their careers.
               </p>
             </motion.div>
 
@@ -397,8 +469,12 @@ export default function CareersPage() {
                       >
                         {benefit.icon}
                       </motion.div>
-                      <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
-                      <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
+                      <h3 className="text-2xl font-bold text-white mb-4">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        {benefit.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -423,12 +499,16 @@ export default function CareersPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-20"
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-8">Open Positions</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                Open Positions
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Find your next opportunity and join our mission to transform the digital landscape.
+                Find your next opportunity and join our mission to transform the
+                digital landscape.
               </p>
               <div className="text-gray-400">
-                Showing {startIndex + 1}-{Math.min(endIndex, jobs.length)} of {jobs.length} positions
+                Showing {startIndex + 1}-{Math.min(endIndex, jobs.length)} of{" "}
+                {jobs.length} positions
               </div>
             </motion.div>
 
@@ -447,7 +527,9 @@ export default function CareersPage() {
                       <div className="grid lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2">
                           <div className="flex flex-wrap items-center gap-4 mb-6">
-                            <Badge className={`bg-gradient-to-r ${job.gradient} text-white border-0 px-4 py-2`}>
+                            <Badge
+                              className={`bg-gradient-to-r ${job.gradient} text-white border-0 px-4 py-2`}
+                            >
                               {job.department}
                             </Badge>
                             <div className="flex items-center text-gray-400 text-sm">
@@ -464,14 +546,23 @@ export default function CareersPage() {
                             </div>
                           </div>
 
-                          <h3 className="text-2xl font-bold text-white mb-4">{job.title}</h3>
-                          <p className="text-gray-300 mb-6 leading-relaxed">{job.description}</p>
+                          <h3 className="text-2xl font-bold text-white mb-4">
+                            {job.title}
+                          </h3>
+                          <p className="text-gray-300 mb-6 leading-relaxed">
+                            {job.description}
+                          </p>
 
                           <div className="mb-6">
-                            <h4 className="text-lg font-semibold text-white mb-3">Requirements:</h4>
+                            <h4 className="text-lg font-semibold text-white mb-3">
+                              Requirements:
+                            </h4>
                             <ul className="space-y-2">
                               {job.requirements.map((req, idx) => (
-                                <li key={idx} className="text-gray-300 flex items-start">
+                                <li
+                                  key={idx}
+                                  className="text-gray-300 flex items-start"
+                                >
                                   <span className="text-green-400 mr-2">•</span>
                                   {req}
                                 </li>
@@ -494,10 +585,17 @@ export default function CareersPage() {
 
                         <div className="flex flex-col justify-center">
                           <div className="bg-white/5 rounded-2xl p-6 text-center mb-6">
-                            <div className="text-sm text-gray-400 mb-2">Experience Required</div>
-                            <div className="text-2xl font-bold text-white">{job.experience}</div>
+                            <div className="text-sm text-gray-400 mb-2">
+                              Experience Required
+                            </div>
+                            <div className="text-2xl font-bold text-white">
+                              {job.experience}
+                            </div>
                           </div>
-                          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
                             <Button
                               onClick={() => handleApplyClick(job)}
                               className={`w-full bg-gradient-to-r ${job.gradient} hover:opacity-90 rounded-xl text-lg py-3 shadow-2xl`}
@@ -513,55 +611,54 @@ export default function CareersPage() {
               ))}
             </div>
 
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="flex justify-center items-center gap-4 mt-16"
-              >
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                  className="border-white/30 text-white hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl"
-                >
-                  <ChevronLeft className="w-4 h-4 mr-1" />
-                  Previous
-                </Button>
+              {totalPages > 1 && (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="flex justify-center items-center gap-4 mt-16"
+  >
+    {/* Previous */}
+    <Button
+      size="sm"
+      onClick={() => handlePageChange(currentPage - 1)}
+      disabled={currentPage === 1}
+      className="bg-gradient-to-r from-black via-black/40 to-black text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      <ChevronLeft className="w-4 h-4 mr-1" />
+      Previous
+    </Button>
 
-                <div className="flex gap-2">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <Button
-                      key={page}
-                      variant={currentPage === page ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => handlePageChange(page)}
-                      className={
-                        currentPage === page
-                          ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl"
-                          : "border-white/30 text-white hover:bg-white/10 rounded-xl"
-                      }
-                    >
-                      {page}
-                    </Button>
-                  ))}
-                </div>
+    {/* Pages */}
+    <div className="flex gap-2">
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        <Button
+          key={page}
+          size="sm"
+          onClick={() => handlePageChange(page)}
+          className={`px-4 py-2 rounded-md text-white bg-gradient-to-r from-black via-black/40 to-black ${
+            currentPage === page ? "ring-2 ring-white/50" : ""
+          }`}
+        >
+          {page}
+        </Button>
+      ))}
+    </div>
 
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                  className="border-white/30 text-white hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl"
-                >
-                  Next
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
-              </motion.div>
-            )}
+    {/* Next */}
+    <Button
+      size="sm"
+      onClick={() => handlePageChange(currentPage + 1)}
+      disabled={currentPage === totalPages}
+      className="bg-gradient-to-r from-black via-black/40 to-black text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Next
+      <ChevronRight className="w-4 h-4 ml-1" />
+    </Button>
+  </motion.div>
+)}
+
+         
           </motion.div>
         </div>
       </section>
@@ -585,7 +682,9 @@ export default function CareersPage() {
             >
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-2">Apply for {selectedJob.title}</h2>
+                  <h2 className="text-3xl font-bold text-white mb-2">
+                    Apply for {selectedJob.title}
+                  </h2>
                   <p className="text-gray-400">
                     {selectedJob.department} • {selectedJob.location}
                   </p>
@@ -646,7 +745,9 @@ export default function CareersPage() {
                       <Upload className="mr-2 w-5 h-5" />
                       Upload Resume *
                     </Button>
-                    <span className="text-gray-400 text-sm">PDF, DOC, or DOCX (Max 5MB)</span>
+                    <span className="text-gray-400 text-sm">
+                      PDF, DOC, or DOCX (Max 5MB)
+                    </span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Button
@@ -657,34 +758,50 @@ export default function CareersPage() {
                       <Upload className="mr-2 w-5 h-5" />
                       Portfolio/Work Samples
                     </Button>
-                    <span className="text-gray-400 text-sm">Optional - Showcase your work</span>
+                    <span className="text-gray-400 text-sm">
+                      Optional - Showcase your work
+                    </span>
                   </div>
                 </div>
 
                 <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-lg font-semibold text-white mb-4">Position Details:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">
+                    Position Details:
+                  </h4>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-gray-400">Salary:</span>
-                      <span className="text-white ml-2">{selectedJob.salary}</span>
+                      <span className="text-white ml-2">
+                        {selectedJob.salary}
+                      </span>
                     </div>
                     <div>
                       <span className="text-gray-400">Experience:</span>
-                      <span className="text-white ml-2">{selectedJob.experience}</span>
+                      <span className="text-white ml-2">
+                        {selectedJob.experience}
+                      </span>
                     </div>
                     <div>
                       <span className="text-gray-400">Type:</span>
-                      <span className="text-white ml-2">{selectedJob.type}</span>
+                      <span className="text-white ml-2">
+                        {selectedJob.type}
+                      </span>
                     </div>
                     <div>
                       <span className="text-gray-400">Location:</span>
-                      <span className="text-white ml-2">{selectedJob.location}</span>
+                      <span className="text-white ml-2">
+                        {selectedJob.location}
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="flex-1">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex-1"
+                  >
                     <Button
                       type="submit"
                       className={`w-full bg-gradient-to-r ${selectedJob.gradient} hover:opacity-90 rounded-xl h-14 text-lg font-semibold shadow-2xl`}
@@ -693,12 +810,15 @@ export default function CareersPage() {
                       Submit Application
                     </Button>
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     <Button
                       type="button"
                       variant="outline"
                       onClick={() => {
-                        const subject = `Application for ${selectedJob.title} Position`
+                        const subject = `Application for ${selectedJob.title} Position`;
                         const body = `Dear Zorrow Tech Hiring Team,
 
 I am interested in applying for the ${selectedJob.title} position in your ${selectedJob.department} department.
@@ -712,8 +832,10 @@ Position Details:
 I believe my skills and experience make me a great fit for this role. Please find my resume attached.
 
 Best regards,
-[Your Name]`
-                        window.location.href = `mailto:careers@zorrowtech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+[Your Name]`;
+                        window.location.href = `mailto:careers@zorrowtech.com?subject=${encodeURIComponent(
+                          subject
+                        )}&body=${encodeURIComponent(body)}`;
                       }}
                       className="border-white/30 text-white hover:bg-white/10 rounded-xl h-14 px-6 bg-transparent backdrop-blur-sm"
                     >
@@ -742,14 +864,17 @@ Best regards,
               transition={{ duration: 0.8 }}
               className="text-center mb-20"
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-8">Quick Application</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                Quick Application
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Don't see the perfect role? Send us your information and we'll reach out when something matches your
-                skills.
+                Don't see the perfect role? Send us your information and we'll
+                reach out when something matches your skills.
               </p>
             </motion.div>
 
             <div className="max-w-4xl mx-auto">
+              
               <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 backdrop-blur-sm">
                 <CardContent className="p-10">
                   <form className="space-y-6">
@@ -788,10 +913,15 @@ Best regards,
                         <Upload className="mr-2 w-5 h-5" />
                         Upload Resume
                       </Button>
-                      <span className="text-gray-400 text-sm">PDF, DOC, or DOCX (Max 5MB)</span>
+                      <span className="text-gray-400 text-sm">
+                        PDF, DOC, or DOCX (Max 5MB)
+                      </span>
                     </div>
-                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-xl h-14 text-lg font-semibold shadow-2xl">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button className="w-full  from-black via-black/40 to-black rounded-xl h-14 text-lg font-semibold shadow-2xl">
                         Submit Application <Send className="ml-2 w-5 h-5" />
                       </Button>
                     </motion.div>
@@ -803,5 +933,5 @@ Best regards,
         </div>
       </section>
     </div>
-  )
+  );
 }

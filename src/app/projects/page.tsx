@@ -58,7 +58,7 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D variant="services" />
+          <Scene3D  />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black" />
 
@@ -69,7 +69,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <Badge className="bg-purple-600/20 text-purple-300 border-purple-500/30 mb-6 px-4 py-2">
+            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
               <BarChart3 className="w-4 h-4 mr-2" />
               Featured Work
             </Badge>
