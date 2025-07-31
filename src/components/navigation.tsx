@@ -98,7 +98,7 @@ export function Navigation() {
           </div>
 
           {/* CTA Button */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -112,7 +112,7 @@ export function Navigation() {
                 </Button>
               </Link>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Mobile Menu Button */}
           <motion.div
@@ -170,7 +170,7 @@ export function Navigation() {
                   </motion.div>
                 );
               })}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -182,7 +182,7 @@ export function Navigation() {
                     Let's Talk
                   </Button>
                 </Link>
-              </motion.div>
+              </motion.div> */}
             </div>
           </motion.div>
         )}

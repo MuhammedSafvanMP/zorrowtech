@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Users, Linkedin, Twitter, Github } from "lucide-react"
-import { Scene3D } from "@/components/3d-scene"
+// import { Scene3D } from "@/components/3d-scene"
 import { StaggeredText } from "@/components/animated-text"
 
 export default function TeamPage() {
@@ -96,7 +96,7 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D />
+          {/* <Scene3D /> */}
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/30 to-black" />
 

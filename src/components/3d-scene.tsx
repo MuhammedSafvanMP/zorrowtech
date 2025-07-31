@@ -290,80 +290,80 @@
 // }
 
 
-"use client";
+// "use client";
 
-import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
-import * as THREE from "three";
+// import { useRef } from "react";
+// import { Canvas, useFrame } from "@react-three/fiber";
+// import { Environment } from "@react-three/drei";
+// import * as THREE from "three";
 
-function Bubble({ position }: { position: [number, number, number] }) {
-  const meshRef = useRef<THREE.Mesh>(null!);
+// function Bubble({ position }: { position: [number, number, number] }) {
+//   const meshRef = useRef<THREE.Mesh>(null!);
 
-  useFrame((state) => {
-    meshRef.current.position.y += 0.02;
-    if (meshRef.current.position.y > 5) {
-      meshRef.current.position.y = -5;
-    }
-    meshRef.current.rotation.x += 0.01;
-    meshRef.current.rotation.y += 0.01;
-  });
+//   useFrame((state) => {
+//     meshRef.current.position.y += 0.02;
+//     if (meshRef.current.position.y > 5) {
+//       meshRef.current.position.y = -5;
+//     }
+//     meshRef.current.rotation.x += 0.01;
+//     meshRef.current.rotation.y += 0.01;
+//   });
 
-  return (
-    <mesh ref={meshRef} position={position}>
-      <sphereGeometry args={[0.1, 16, 16]} />
-      <meshStandardMaterial color="#00BFFF" transparent opacity={0.7} />
-    </mesh>
-  );
-}
+//   return (
+//     <mesh ref={meshRef} position={position}>
+//       <sphereGeometry args={[0.1, 16, 16]} />
+//       <meshStandardMaterial color="#00BFFF" transparent opacity={0.7} />
+//     </mesh>
+//   );
+// }
 
-function Pipe() {
-  return (
-    <mesh rotation={[Math.PI / 2, 0, 0]}>
-      <cylinderGeometry args={[0.5, 0.5, 10, 32, 1, true]} />
-      <meshStandardMaterial color="#555" side={THREE.BackSide} transparent opacity={0.2} />
-    </mesh>
-  );
-}
+// function Pipe() {
+//   return (
+//     <mesh rotation={[Math.PI / 2, 0, 0]}>
+//       <cylinderGeometry args={[0.5, 0.5, 10, 32, 1, true]} />
+//       <meshStandardMaterial color="#555" side={THREE.BackSide} transparent opacity={0.2} />
+//     </mesh>
+//   );
+// }
 
-function MovingBall() {
-  const meshRef = useRef<THREE.Mesh>(null!);
+// function MovingBall() {
+//   const meshRef = useRef<THREE.Mesh>(null!);
 
-  useFrame((state) => {
-    const t = state.clock.elapsedTime;
-    meshRef.current.position.y = 5 - (t % 10); // Move from 5 to -5, loop
-  });
+//   useFrame((state) => {
+//     const t = state.clock.elapsedTime;
+//     meshRef.current.position.y = 5 - (t % 10); // Move from 5 to -5, loop
+//   });
 
-  return (
-    <mesh ref={meshRef} position={[0, 5, 0]}>
-      <sphereGeometry args={[0.2, 32, 32]} />
-      <meshStandardMaterial color="#FF2D95" emissive="#FF2D95" emissiveIntensity={0.5} />
-    </mesh>
-  );
-}
+//   return (
+//     <mesh ref={meshRef} position={[0, 5, 0]}>
+//       <sphereGeometry args={[0.2, 32, 32]} />
+//       <meshStandardMaterial color="#FF2D95" emissive="#FF2D95" emissiveIntensity={0.5} />
+//     </mesh>
+//   );
+// }
 
-export function Scene3D() {
-  // Generate 100 bubbles at random x,z
-  const bubbles = Array.from({ length: 100 }, () => ({
-    position: [
-      (Math.random() - 0.5) * 4,
-      Math.random() * -5,
-      (Math.random() - 0.5) * 4,
-    ] as [number, number, number],
-  }));
+// export function Scene3D() {
+//   // Generate 100 bubbles at random x,z
+//   const bubbles = Array.from({ length: 100 }, () => ({
+//     position: [
+//       (Math.random() - 0.5) * 4,
+//       Math.random() * -5,
+//       (Math.random() - 0.5) * 4,
+//     ] as [number, number, number],
+//   }));
 
-  return (
-    <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
-      <Environment preset="night" />
-      <ambientLight intensity={0.5} />
-      <pointLight position={[5, 5, 5]} intensity={1} />
+//   return (
+//     <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
+//       <Environment preset="night" />
+//       <ambientLight intensity={0.5} />
+//       <pointLight position={[5, 5, 5]} intensity={1} />
 
-      <Pipe />
-      <MovingBall />
+//       <Pipe />
+//       <MovingBall />
 
-      {bubbles.map((b, i) => (
-        <Bubble key={i} position={b.position} />
-      ))}
-    </Canvas>
-  );
-}
+//       {bubbles.map((b, i) => (
+//         <Bubble key={i} position={b.position} />
+//       ))}
+//     </Canvas>
+//   );
+// }

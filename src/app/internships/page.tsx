@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GraduationCap, MapPin, Clock, Users, Award, BookOpen, Target, Star } from "lucide-react"
-import { Scene3D } from "@/components/3d-scene"
+// import { Scene3D } from "@/components/3d-scene"
 import { useState } from "react"
 
 export default function InternshipsPage() {
@@ -181,7 +181,7 @@ export default function InternshipsPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D  />
+          {/* <Scene3D  /> */}
         </div>
         <div className="absolute inset-0 from-black via-black/40 to-black" />
 

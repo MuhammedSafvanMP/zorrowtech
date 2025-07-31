@@ -24,18 +24,17 @@ import {
   Navigation,
   Clock,
 } from "lucide-react";
-import { Scene3D } from "@/components/3d-scene";
+// import { Scene3D } from "@/components/3d-scene";
 import { StaggeredText } from "@/components/animated-text";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <Scene3D  />
-        </div>
+        <div className="absolute inset-0 opacity-30">{/* <Scene3D /> */}</div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -132,37 +131,41 @@ export default function ContactPage() {
                   Contact Information
                 </h3>
                 <div className="space-y-6">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center text-gray-300 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10"
-                  >
-                    <div className="w-14 h-14 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mr-6">
-                      <Mail className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-white text-lg">
-                        Email
+                  <Link href="mailto:zorrowtech@gmail.com">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center text-gray-300 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 cursor-pointer"
+                    >
+                      <div className="w-14 h-14 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mr-6">
+                        <Mail className="w-7 h-7 text-white" />
                       </div>
-                      <div className="text-violet-400">
-                        hello@zorrowtech.com
+                      <div>
+                        <div className="font-semibold text-white text-lg">
+                          Email
+                        </div>
+                        <div className="text-violet-400">
+                          zorrowtech@gmail.com
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </Link>
 
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center text-gray-300 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10"
-                  >
-                    <div className="w-14 h-14 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl flex items-center justify-center mr-6">
-                      <Phone className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-white text-lg">
-                        Phone
+                  <a href="tel:+919400517720" className="block">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center text-gray-300 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 cursor-pointer"
+                    >
+                      <div className="w-14 h-14 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl flex items-center justify-center mr-6">
+                        <Phone className="w-7 h-7 text-white" />
                       </div>
-                      <div className="text-green-400">+1 (555) 123-4567</div>
-                    </div>
-                  </motion.div>
+                      <div>
+                        <div className="font-semibold text-white text-lg">
+                          Phone
+                        </div>
+                        <div className="text-green-400">+91 9400517720</div>
+                      </div>
+                    </motion.div>
+                  </a>
 
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -175,7 +178,9 @@ export default function ContactPage() {
                       <div className="font-semibold text-white text-lg">
                         Office
                       </div>
-                      <div className="text-purple-400">San Francisco, CA</div>
+                      <div className="text-purple-400">
+                        Malappuram, Kerala, India 676505
+                      </div>
                     </div>
                   </motion.div>
                 </div>
@@ -247,8 +252,8 @@ export default function ContactPage() {
               Visit Our Office
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Located in the heart of San Francisco's tech district, our office
-              is easily accessible and designed for innovation.
+              Located in the heart of San Malappuram, Kerala tech district, our
+              office is easily accessible and designed for innovation.
             </p>
           </motion.div>
 
@@ -263,7 +268,7 @@ export default function ContactPage() {
               <div className="bg-gradient-to-br from-gray-900/90 to-black/90 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl">
                 <div className="h-96 relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019284332489!2d-122.41941492404069!3d37.77492971928168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2us"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7832.068292228504!2d76.102286!3d11.036065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba635234a0a9c23%3A0x4cdc30ff6ec49fe4!2sZORROW%20TECH%20IT%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1753961745155!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -303,11 +308,9 @@ export default function ContactPage() {
                           Address
                         </div>
                         <div className="text-blue-400">
-                          1355 Market Street, Suite 900
+                          Koottilangadi, Malappuram, Kerala
                           <br />
-                          San Francisco, CA 94103
-                          <br />
-                          United States
+                          India 676505{" "}
                         </div>
                       </div>
                     </motion.div>
@@ -362,7 +365,7 @@ export default function ContactPage() {
                     <Button
                       onClick={() =>
                         window.open(
-                          "https://maps.google.com/?q=1355+Market+Street+San+Francisco+CA",
+                          "https://maps.app.goo.gl/xDHv9Yq6WM97uZ8p9",
                           "_blank"
                         )
                       }
@@ -383,18 +386,11 @@ export default function ContactPage() {
                   </h4>
                   <div className="space-y-3">
                     {[
-                      { name: "Twitter HQ", distance: "0.2 miles", icon: "🏢" },
-                      { name: "Uber HQ", distance: "0.3 miles", icon: "🚗" },
+                      { name: "Post Office", distance: "0.2 m", icon: "🏢" },
                       {
-                        name: "Civic Center Plaza",
-                        distance: "0.1 miles",
-                        icon: "🏛️",
-                      },
-                      { name: "UN Plaza", distance: "0.2 miles", icon: "🌍" },
-                      {
-                        name: "SOMA District",
-                        distance: "0.5 miles",
-                        icon: "🏙️",
+                        name: "Fathima Auditorium",
+                        distance: "5 m",
+                        icon: "🎭",
                       },
                     ].map((landmark, index) => (
                       <motion.div
@@ -560,8 +556,7 @@ export default function ContactPage() {
             </div>
 
             <div className="text-gray-500 text-sm">
-              © 2024 Zorrow Tech IT Solutions. All rights reserved. | Crafted
-              with <span className="text-red-400">❤️</span> in San Francisco
+              © 2024 Zorrow Tech IT Solutions. All rights reserved.
             </div>
           </div>
         </div>

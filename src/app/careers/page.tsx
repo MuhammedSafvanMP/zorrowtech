@@ -24,7 +24,7 @@ import {
   X,
   Mail,
 } from "lucide-react";
-import { Scene3D } from "@/components/3d-scene";
+// import { Scene3D } from "@/components/3d-scene";
 import { useState } from "react";
 
 export default function CareersPage() {
@@ -362,7 +362,7 @@ export default function CareersPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D  />
+          {/* <Scene3D  /> */}
         </div>
         <div className="absolute inset-0 from-black via-black/40 to-black" />
 

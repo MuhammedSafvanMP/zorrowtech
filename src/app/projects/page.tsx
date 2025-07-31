@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { BarChart3, ArrowRight } from "lucide-react"
-import { Scene3D } from "@/components/3d-scene"
+// import { Scene3D } from "@/components/3d-scene"
 import { StaggeredText } from "@/components/animated-text"
 
 export default function ProjectsPage() {
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <Scene3D  />
+          {/* <Scene3D  /> */}
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black" />
 

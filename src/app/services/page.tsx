@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Code, Smartphone, Cloud, Brain, ArrowRight, CheckCircle, Cpu } from "lucide-react"
-import { Scene3D } from "@/components/3d-scene"
+// import { Scene3D } from "@/components/3d-scene"
 import { AnimatedText, StaggeredText } from "@/components/animated-text"
 
 export default function ServicesPage() {
@@ -104,7 +104,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section */}
         <div className="absolute inset-0 opacity-30">
-          <Scene3D  />
+          {/* <Scene3D  /> */}
         </div>
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 from-black via-black/40 to-black" />
@@ -198,7 +198,7 @@ export default function ServicesPage() {
       {/* Process Section */}
       <section className="py-32 relative">
             <div className="absolute inset-0 opacity-30">
-          <Scene3D  />
+          {/* <Scene3D  /> */}
         </div>
         <div className="container mx-auto px-6">
           <motion.div
