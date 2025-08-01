@@ -31,11 +31,21 @@ import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="relative min-h-screen text-white overflow-hidden pt-20">
+      {/* ✅ Fixed blurred background */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/banner-2.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-md"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">{/* <Scene3D /> */}</div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />
+      <section className="py-32 relative overflow-hidden z-10">
+        <div className="absolute inset-0 " />
+
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -76,7 +86,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 backdrop-blur-sm">
+              <Card className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 backdrop-blur-sm">
                 <CardContent className="p-10">
                   <h3 className="text-3xl font-bold text-white mb-8">
                     Get In Touch
@@ -189,7 +199,7 @@ export default function ContactPage() {
               {/* Why Partner With Us */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-r from-violet-600/20 via-purple-600/20 to-indigo-600/20 rounded-3xl p-8 border border-white/20 backdrop-blur-sm"
+                className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 rounded-3xl p-8 border border-white/20 backdrop-blur-sm"
               >
                 <h4 className="text-2xl font-bold text-white mb-6">
                   Why Partner With Us?
@@ -265,7 +275,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-gray-900/90 to-black/90 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl">
+              <div className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl">
                 <div className="h-96 relative">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7832.068292228504!2d76.102286!3d11.036065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba635234a0a9c23%3A0x4cdc30ff6ec49fe4!2sZORROW%20TECH%20IT%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1753961745155!5m2!1sen!2sin"
@@ -289,7 +299,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 backdrop-blur-sm">
+              <Card className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-white mb-6">
                     Office Details
@@ -379,7 +389,7 @@ export default function ContactPage() {
               </Card>
 
               {/* Nearby Landmarks */}
-              <Card className="bg-gradient-to-br from-gray-900/80 to-black/80 border-white/10 backdrop-blur-sm">
+              <Card className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 backdrop-blur-sm">
                 <CardContent className="p-6">
                   <h4 className="text-xl font-bold text-white mb-4">
                     Nearby Landmarks
@@ -471,7 +481,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-500"
+                className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-500"
               >
                 <h4 className="text-xl font-bold text-white mb-3">
                   {faq.question}
@@ -484,32 +494,36 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 bg-black/80 backdrop-blur-sm border-t border-white/10">
+      <footer className="py-16 ">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-4 mb-6"
-            >
-              <motion.div
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-                className="w-12 h-12  bg-black/50 rounded-2xl flex items-center justify-center"
-              >
-                {/* <Zap className="w-6 h-6 text-white" /> */}
-                <Image
-                  src="/zorrow.jpeg"
-                  alt="icon"
-                  width={8}
-                  height={8}
-                  className="object-cover rounded-2xl w-6 h-6"
-                />
-              </motion.div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
-                Zorrow Tech
-              </span>
-            </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  className="flex flex-col items-center justify-center gap-1 mb-6"
+>
+  <motion.div
+    whileHover={{ rotate: 360 }}
+    transition={{ duration: 0.6 }}
+    className="w-20 h-20 rounded-2xl flex items-center justify-center"
+  >
+    <Image
+      src="/logo.png"
+      alt="Zorrow Tech Logo"
+      width={80}
+      height={80}
+      className="object-cover rounded-2xl w-20 h-20"
+    />
+  </motion.div>
+
+  <span className="text-3xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+    Zorrow Tech
+  </span>
+</motion.div>
+
+
+
+
 
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
               Transforming ideas into digital reality with cutting-edge

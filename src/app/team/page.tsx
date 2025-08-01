@@ -91,14 +91,22 @@ export default function TeamPage() {
     },
   ]
 
+
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="relative min-h-screen text-white overflow-hidden pt-20">
+      {/* ✅ Fixed background image */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/banner-2.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-md"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          {/* <Scene3D /> */}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/30 to-black" />
+      <section className="py-32 relative z-10 overflow-hidden">
+        <div className="absolute inset-0" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -111,22 +119,24 @@ export default function TeamPage() {
               <Users className="w-4 h-4 mr-2" />
               Leadership Team
             </Badge>
-            <StaggeredText text="Meet The Visionaries" className="text-5xl md:text-7xl font-bold mb-8" />
+            <StaggeredText
+              text="Meet The Visionaries"
+              className="text-5xl md:text-7xl font-bold mb-8"
+            />
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
               className="text-xl text-gray-300 max-w-4xl mx-auto"
             >
-              Industry veterans who've built products used by billions at the world's leading tech companies. Our
-              diverse team brings together expertise from Google, Microsoft, Apple, Tesla, and more.
+              Industry veterans who've built products used by billions at the world's leading tech companies. Our diverse team brings together expertise from Google, Microsoft, Apple, Tesla, and more.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Team Grid */}
-      <section className="py-20">
+      <section className="py-20 relative z-10">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12">
             {team.map((member, index) => (
@@ -138,7 +148,7 @@ export default function TeamPage() {
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 className="group team-card"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                <Card className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
                   <div className="relative overflow-hidden">
                     <img
                       src={member.image || "/placeholder.svg"}
@@ -148,7 +158,10 @@ export default function TeamPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                     <div className="absolute top-4 right-4 flex flex-wrap gap-2">
                       {member.achievements.slice(0, 2).map((achievement, idx) => (
-                        <Badge key={idx} className="bg-black/50 text-white border-white/20 backdrop-blur-sm text-xs">
+                        <Badge
+                          key={idx}
+                          className="bg-black/50 text-white border-white/20 backdrop-blur-sm text-xs"
+                        >
                           {achievement}
                         </Badge>
                       ))}
@@ -222,7 +235,7 @@ export default function TeamPage() {
       </section>
 
       {/* Team Stats */}
-      <section className="py-32 relative">
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -230,7 +243,10 @@ export default function TeamPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <StaggeredText text="Our Collective Impact" className="text-4xl md:text-6xl font-bold mb-8" />
+            <StaggeredText
+              text="Our Collective Impact"
+              className="text-4xl md:text-6xl font-bold mb-8"
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -248,7 +264,7 @@ export default function TeamPage() {
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500">
+                <div className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500">
                   <div className="text-4xl mb-4">{stat.icon}</div>
                   <div className="text-4xl font-bold text-white mb-2">
                     {stat.number}

@@ -11,7 +11,7 @@ export default function HomePage() {
       {/* ✅ Fixed background image */}
       <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
         <img
-          src="/banner.jpeg"
+          src="/banner-2.png"
           alt="Background"
           className="w-full h-full object-cover blur-md"
         />

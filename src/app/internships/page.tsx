@@ -1,16 +1,25 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { GraduationCap, MapPin, Clock, Users, Award, BookOpen, Target, Star } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  GraduationCap,
+  MapPin,
+  Clock,
+  Users,
+  Award,
+  BookOpen,
+  Target,
+  Star,
+} from "lucide-react";
 // import { Scene3D } from "@/components/3d-scene"
-import { useState } from "react"
+import { useState } from "react";
 
 export default function InternshipsPage() {
-  const [selectedProgram, setSelectedProgram] = useState<any>(null)
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
+  const [selectedProgram, setSelectedProgram] = useState<any>(null);
+  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
   const programs = [
     {
@@ -21,7 +30,8 @@ export default function InternshipsPage() {
       stipend: "$2,000/month",
       location: "Remote/Hybrid",
       spots: "10 positions",
-      description: "Learn modern web development with React, Next.js, and Node.js while working on real projects.",
+      description:
+        "Learn modern web development with React, Next.js, and Node.js while working on real projects.",
       skills: ["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "Git"],
       requirements: [
         "Currently pursuing CS/IT degree or bootcamp graduate",
@@ -46,8 +56,16 @@ export default function InternshipsPage() {
       stipend: "$2,500/month",
       location: "San Francisco, CA",
       spots: "5 positions",
-      description: "Work on cutting-edge AI research projects and contribute to machine learning innovations.",
-      skills: ["Python", "TensorFlow", "PyTorch", "Data Science", "Research", "Statistics"],
+      description:
+        "Work on cutting-edge AI research projects and contribute to machine learning innovations.",
+      skills: [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Data Science",
+        "Research",
+        "Statistics",
+      ],
       requirements: [
         "CS/AI/ML degree student (Junior/Senior level)",
         "Strong Python programming skills",
@@ -71,15 +89,28 @@ export default function InternshipsPage() {
       stipend: "$1,800/month",
       location: "Remote",
       spots: "8 positions",
-      description: "Create beautiful user experiences and learn design thinking from industry experts.",
-      skills: ["Figma", "Adobe Creative Suite", "User Research", "Prototyping", "Design Systems", "Usability Testing"],
+      description:
+        "Create beautiful user experiences and learn design thinking from industry experts.",
+      skills: [
+        "Figma",
+        "Adobe Creative Suite",
+        "User Research",
+        "Prototyping",
+        "Design Systems",
+        "Usability Testing",
+      ],
       requirements: [
         "Design student or self-taught designer",
         "Portfolio showcasing design work",
         "Understanding of design principles",
         "Eagerness to learn and iterate",
       ],
-      benefits: ["Portfolio development", "Design mentorship", "Client project exposure", "Design tool licenses"],
+      benefits: [
+        "Portfolio development",
+        "Design mentorship",
+        "Client project exposure",
+        "Design tool licenses",
+      ],
       gradient: "from-green-600 to-emerald-600",
       startDate: "March 2024",
     },
@@ -91,8 +122,16 @@ export default function InternshipsPage() {
       stipend: "$2,200/month",
       location: "Remote/Hybrid",
       spots: "6 positions",
-      description: "Build mobile applications for iOS and Android using React Native and Flutter.",
-      skills: ["React Native", "Flutter", "Mobile UI/UX", "API Integration", "App Store Deployment", "Testing"],
+      description:
+        "Build mobile applications for iOS and Android using React Native and Flutter.",
+      skills: [
+        "React Native",
+        "Flutter",
+        "Mobile UI/UX",
+        "API Integration",
+        "App Store Deployment",
+        "Testing",
+      ],
       requirements: [
         "Basic mobile development knowledge",
         "Understanding of JavaScript or Dart",
@@ -108,7 +147,7 @@ export default function InternshipsPage() {
       gradient: "from-orange-600 to-red-600",
       startDate: "April 2024",
     },
-  ]
+  ];
 
   const learningPrograms = [
     {
@@ -116,7 +155,8 @@ export default function InternshipsPage() {
       duration: "6 months",
       level: "Beginner",
       price: "Free",
-      description: "Complete bootcamp covering HTML, CSS, JavaScript, React, Node.js, and databases.",
+      description:
+        "Complete bootcamp covering HTML, CSS, JavaScript, React, Node.js, and databases.",
       modules: 12,
       projects: 8,
       gradient: "from-indigo-600 to-purple-600",
@@ -126,7 +166,8 @@ export default function InternshipsPage() {
       duration: "4 months",
       level: "Intermediate",
       price: "$299",
-      description: "Deep dive into machine learning, neural networks, and AI application development.",
+      description:
+        "Deep dive into machine learning, neural networks, and AI application development.",
       modules: 10,
       projects: 6,
       gradient: "from-violet-600 to-pink-600",
@@ -136,12 +177,13 @@ export default function InternshipsPage() {
       duration: "3 months",
       level: "Advanced",
       price: "$199",
-      description: "Master AWS, Azure, and GCP with hands-on projects and certification preparation.",
+      description:
+        "Master AWS, Azure, and GCP with hands-on projects and certification preparation.",
       modules: 8,
       projects: 4,
       gradient: "from-cyan-600 to-blue-600",
     },
-  ]
+  ];
 
   const testimonials = [
     {
@@ -157,7 +199,8 @@ export default function InternshipsPage() {
       name: "Alex Chen",
       program: "AI/ML Research",
       image: "/placeholder.svg?height=100&width=100",
-      quote: "Working on real AI projects gave me the confidence to pursue my PhD. The mentorship was incredible.",
+      quote:
+        "Working on real AI projects gave me the confidence to pursue my PhD. The mentorship was incredible.",
       rating: 5,
       position: "PhD Student at Stanford",
     },
@@ -165,25 +208,33 @@ export default function InternshipsPage() {
       name: "Maria Rodriguez",
       program: "UX Design Internship",
       image: "/placeholder.svg?height=100&width=100",
-      quote: "I built an amazing portfolio and landed my dream job. The design mentorship was world-class.",
+      quote:
+        "I built an amazing portfolio and landed my dream job. The design mentorship was world-class.",
       rating: 5,
       position: "Senior Designer at Apple",
     },
-  ]
+  ];
 
   const handleApplyClick = (program: any) => {
-    setSelectedProgram(program)
-    setIsApplyModalOpen(true)
-  }
+    setSelectedProgram(program);
+    setIsApplyModalOpen(true);
+  };
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="relative min-h-screen text-white overflow-hidden pt-20">
+      {/* ✅ Fixed blurred background */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/banner-2.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-md"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          {/* <Scene3D  /> */}
-        </div>
-        <div className="absolute inset-0 from-black via-black/40 to-black" />
+      <section className="py-32 relative overflow-hidden z-10">
+        <div className="absolute inset-0" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -205,18 +256,35 @@ export default function InternshipsPage() {
               transition={{ delay: 1, duration: 0.8 }}
               className="text-xl text-gray-300 max-w-4xl mx-auto"
             >
-              Join our world-class internship programs and learning initiatives. Get hands-on experience, mentorship
-              from industry experts, and launch your career in technology.
+              Join our world-class internship programs and learning initiatives.
+              Get hands-on experience, mentorship from industry experts, and
+              launch your career in technology.
             </motion.p>
           </motion.div>
 
           {/* Stats */}
           <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {[
-              { number: "500+", label: "Interns Trained", icon: <Users className="w-6 h-6" /> },
-              { number: "95%", label: "Job Placement Rate", icon: <Target className="w-6 h-6" /> },
-              { number: "50+", label: "Partner Companies", icon: <Award className="w-6 h-6" /> },
-              { number: "4.9/5", label: "Program Rating", icon: <Star className="w-6 h-6" /> },
+              {
+                number: "500+",
+                label: "Interns Trained",
+                icon: <Users className="w-6 h-6" />,
+              },
+              {
+                number: "95%",
+                label: "Job Placement Rate",
+                icon: <Target className="w-6 h-6" />,
+              },
+              {
+                number: "50+",
+                label: "Partner Companies",
+                icon: <Award className="w-6 h-6" />,
+              },
+              {
+                number: "4.9/5",
+                label: "Program Rating",
+                icon: <Star className="w-6 h-6" />,
+              },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -227,11 +295,15 @@ export default function InternshipsPage() {
                 className="text-center"
               >
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="text-indigo-400 mb-2 flex justify-center">{stat.icon}</div>
+                  <div className="text-indigo-400 mb-2 flex justify-center">
+                    {stat.icon}
+                  </div>
                   <div className="text-3xl font-bold bg-gradient-to-r text-white bg-clip-text  mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
+                  <div className="text-gray-400 text-sm font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -252,7 +324,8 @@ export default function InternshipsPage() {
               Internship Programs
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Gain real-world experience working on cutting-edge projects with mentorship from industry experts.
+              Gain real-world experience working on cutting-edge projects with
+              mentorship from industry experts.
             </p>
           </motion.div>
 
@@ -266,10 +339,12 @@ export default function InternshipsPage() {
                 whileHover={{ scale: 1.02 }}
                 className="group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                <Card className="relative h-full bg-gradient-to-br from-black/70 via-black/50 to-black/20 transition-all duration-500 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <Badge className={`bg-gradient-to-r ${program.gradient} text-white border-0 px-4 py-2`}>
+                      <Badge
+                        className={`bg-gradient-to-r ${program.gradient} text-white border-0 px-4 py-2`}
+                      >
                         {program.type}
                       </Badge>
                       <div className="flex items-center text-gray-400 text-sm">
@@ -286,22 +361,36 @@ export default function InternshipsPage() {
                       </div>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4">{program.title}</h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">{program.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {program.title}
+                    </h3>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      {program.description}
+                    </p>
 
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="bg-white/5 rounded-xl p-4 text-center">
-                        <div className="text-sm text-gray-400 mb-1">Stipend</div>
-                        <div className="text-lg font-bold text-green-400">{program.stipend}</div>
+                        <div className="text-sm text-gray-400 mb-1">
+                          Stipend
+                        </div>
+                        <div className="text-lg font-bold text-green-400">
+                          {program.stipend}
+                        </div>
                       </div>
                       <div className="bg-white/5 rounded-xl p-4 text-center">
-                        <div className="text-sm text-gray-400 mb-1">Start Date</div>
-                        <div className="text-lg font-bold text-blue-400">{program.startDate}</div>
+                        <div className="text-sm text-gray-400 mb-1">
+                          Start Date
+                        </div>
+                        <div className="text-lg font-bold text-blue-400">
+                          {program.startDate}
+                        </div>
                       </div>
                     </div>
 
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-3">Skills You'll Learn:</h4>
+                      <h4 className="text-lg font-semibold text-white mb-3">
+                        Skills You'll Learn:
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {program.skills.map((skill, idx) => (
                           <Badge
@@ -315,7 +404,10 @@ export default function InternshipsPage() {
                       </div>
                     </div>
 
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       <Button
                         onClick={() => handleApplyClick(program)}
                         className={`w-full bg-gradient-to-r ${program.gradient} hover:opacity-90 rounded-xl text-lg py-3 shadow-2xl`}
@@ -344,7 +436,8 @@ export default function InternshipsPage() {
               Learning Programs
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive courses designed to take you from beginner to industry-ready professional.
+              Comprehensive courses designed to take you from beginner to
+              industry-ready professional.
             </p>
           </motion.div>
 
@@ -358,7 +451,7 @@ export default function InternshipsPage() {
                 whileHover={{ scale: 1.05 }}
                 className="group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/80 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                <Card className="h-full bg-gradient-to-br from-black/70 via-black/50 to-black/20 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 text-center">
                     <motion.div
                       whileHover={{ rotate: 360 }}
@@ -367,29 +460,43 @@ export default function InternshipsPage() {
                     >
                       <BookOpen className="w-8 h-8" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-white mb-4">{program.title}</h3>
-                    <p className="text-gray-300 leading-relaxed mb-6">{program.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {program.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      {program.description}
+                    </p>
 
                     <div className="grid grid-cols-3 gap-4 mb-6">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-blue-400">{program.modules}</div>
+                        <div className="text-2xl font-bold text-blue-400">
+                          {program.modules}
+                        </div>
                         <div className="text-xs text-gray-400">Modules</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-green-400">{program.projects}</div>
+                        <div className="text-2xl font-bold text-green-400">
+                          {program.projects}
+                        </div>
                         <div className="text-xs text-gray-400">Projects</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-purple-400">{program.duration}</div>
+                        <div className="text-2xl font-bold text-purple-400">
+                          {program.duration}
+                        </div>
                         <div className="text-xs text-gray-400">Duration</div>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-between mb-6">
-                      <Badge className={`bg-gradient-to-r ${program.gradient} text-white border-0`}>
+                      <Badge
+                        className={`bg-gradient-to-r ${program.gradient} text-white border-0`}
+                      >
                         {program.level}
                       </Badge>
-                      <div className="text-2xl font-bold text-white">{program.price}</div>
+                      <div className="text-2xl font-bold text-white">
+                        {program.price}
+                      </div>
                     </div>
 
                     <Button
@@ -429,7 +536,7 @@ export default function InternshipsPage() {
                 whileHover={{ scale: 1.05 }}
                 className="group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/80 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                <Card className="h-full  bg-gradient-to-br from-black/70 via-black/50 to-black/20 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 text-center">
                     <img
                       src={testimonial.image || "/placeholder.svg"}
@@ -438,13 +545,24 @@ export default function InternshipsPage() {
                     />
                     <div className="flex justify-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        <Star
+                          key={i}
+                          className="w-5 h-5 text-yellow-400 fill-current"
+                        />
                       ))}
                     </div>
-                    <p className="text-gray-300 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                    <h4 className="text-xl font-bold text-white mb-2">{testimonial.name}</h4>
-                    <p className="text-indigo-400 font-semibold mb-2">{testimonial.program}</p>
-                    <p className="text-gray-400 text-sm">{testimonial.position}</p>
+                    <p className="text-gray-300 italic mb-6 leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
+                    <h4 className="text-xl font-bold text-white mb-2">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-indigo-400 font-semibold mb-2">
+                      {testimonial.program}
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      {testimonial.position}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -453,5 +571,5 @@ export default function InternshipsPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

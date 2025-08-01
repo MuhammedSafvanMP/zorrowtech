@@ -11,7 +11,8 @@ export default function ProjectsPage() {
   const projects = [
     {
       title: "FinTech Revolution Platform",
-      description: "AI-powered financial platform serving 2M+ users with real-time trading and portfolio management",
+      description:
+        "AI-powered financial platform serving 2M+ users with real-time trading and portfolio management",
       image: "/placeholder.svg?height=400&width=600",
       tech: ["Next.js 14", "Python", "TensorFlow", "AWS", "WebSocket"],
       metrics: {
@@ -25,7 +26,8 @@ export default function ProjectsPage() {
     },
     {
       title: "HealthTech Telemedicine Suite",
-      description: "Complete healthcare platform with AI diagnostics and global patient connectivity",
+      description:
+        "Complete healthcare platform with AI diagnostics and global patient connectivity",
       image: "/placeholder.svg?height=400&width=600",
       tech: ["React Native", "Node.js", "WebRTC", "MongoDB", "AI Vision"],
       metrics: {
@@ -39,7 +41,8 @@ export default function ProjectsPage() {
     },
     {
       title: "E-Commerce AI Marketplace",
-      description: "Multi-vendor marketplace with AI recommendations and automated inventory management",
+      description:
+        "Multi-vendor marketplace with AI recommendations and automated inventory management",
       image: "/placeholder.svg?height=400&width=600",
       tech: ["Vue.js", "Laravel", "Redis", "Elasticsearch", "ML Algorithms"],
       metrics: {
@@ -54,13 +57,20 @@ export default function ProjectsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="relative min-h-screen text-white overflow-hidden pt-20">
+      {/* ✅ Fixed background image */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/banner-2.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-md"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          {/* <Scene3D  /> */}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black" />
+      <section className="py-32 relative z-10 overflow-hidden">
+        <div className="absolute inset-0 " />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -73,21 +83,25 @@ export default function ProjectsPage() {
               <BarChart3 className="w-4 h-4 mr-2" />
               Featured Work
             </Badge>
-            <StaggeredText text="Success Stories" className="text-5xl md:text-7xl font-bold mb-8" />
+            <StaggeredText
+              text="Success Stories"
+              className="text-5xl md:text-7xl font-bold mb-8"
+            />
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
               className="text-xl text-gray-300 max-w-4xl mx-auto"
             >
-              Explore our portfolio of transformative projects that showcase innovation and deliver exceptional results
+              Explore our portfolio of transformative projects that showcase
+              innovation and deliver exceptional results
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Projects Showcase */}
-      <section className="py-20">
+      <section className="py-20 relative z-10">
         <div className="container mx-auto px-6">
           <div className="space-y-24">
             {projects.map((project, index) => (
@@ -96,24 +110,37 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 1 }}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                className={`grid lg:grid-cols-2 gap-16 items-center ${
+                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                }`}
               >
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                  <Badge className={`bg-gradient-to-r ${project.color} text-white border-0 mb-6 px-4 py-2`}>
+                  <Badge
+                    className={`bg-gradient-to-r ${project.color} text-white border-0 mb-6 px-4 py-2`}
+                  >
                     {project.category}
                   </Badge>
-                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">{project.title}</h3>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">{project.description}</p>
+                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    {project.title}
+                  </h3>
+                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                    {project.description}
+                  </p>
 
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     {Object.entries(project.metrics).map(([key, value], idx) => (
-                      <div key={idx} className="text-center bg-white/5 rounded-2xl p-4 backdrop-blur-sm">
+                      <div
+                        key={idx}
+                        className="text-center bg-white/5 rounded-2xl p-4 backdrop-blur-sm"
+                      >
                         <div
                           className={`text-2xl font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
                         >
                           {value}
                         </div>
-                        <div className="text-sm text-gray-400 capitalize">{key.replace(/([A-Z])/g, " $1")}</div>
+                        <div className="text-sm text-gray-400 capitalize">
+                          {key.replace(/([A-Z])/g, " $1")}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -131,7 +158,7 @@ export default function ProjectsPage() {
 
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
-                      className={`bg-gradient-to-r ${project.color} hover:opacity-90 rounded-xl text-lg px-8 py-3 shadow-2xl project-card`}
+                      className={`bg-gradient-to-r ${project.color} hover:opacity-90 rounded-xl text-lg px-8 py-3 shadow-2xl`}
                     >
                       View Case Study <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -149,10 +176,14 @@ export default function ProjectsPage() {
                       className="w-full h-96 object-cover"
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t ${project.color.replace("from-", "from-").replace("to-", "to-")}/20 via-transparent to-transparent`}
+                      className={`absolute inset-0 bg-gradient-to-t ${project.color}/20 via-transparent to-transparent`}
                     />
                     <div className="absolute top-6 right-6">
-                      <Badge className={`bg-gradient-to-r ${project.color} text-white border-0`}>Live Project</Badge>
+                      <Badge
+                        className={`bg-gradient-to-r ${project.color} text-white border-0`}
+                      >
+                        Live Project
+                      </Badge>
                     </div>
                   </div>
                 </motion.div>

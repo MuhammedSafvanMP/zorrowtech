@@ -47,10 +47,10 @@ export function Navigation() {
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="relative w-8 h-8 md:w-12 md:h-12 bg-black/50 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden"
+                className="relative w-8 h-8 md:w-12 md:h-12  rounded-2xl flex items-center justify-center shadow-lg overflow-hidden"
               >
                 <Image
-                  src="/zorrow.jpeg"
+                  src="/logo.png"
                   alt="icon"
                   fill
                   className="object-cover rounded-2xl"
@@ -97,22 +97,7 @@ export function Navigation() {
             })}
           </div>
 
-          {/* CTA Button */}
-          {/* <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="hidden lg:flex items-center"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link href="/contact">
-                <Button className="w-full from-black via-black/40 to-black text-white border rounded-xl shadow-md">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Let's Talk
-                </Button>
-              </Link>
-            </motion.div>
-          </motion.div> */}
+     
 
           {/* Mobile Menu Button */}
           <motion.div
@@ -170,19 +155,7 @@ export function Navigation() {
                   </motion.div>
                 );
               })}
-              {/* <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="pt-6"
-              >
-                <Link href="/contact">
-                  <Button className="w-full from-black via-black/40 to-black text-white border rounded-xl shadow-md">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Let's Talk
-                  </Button>
-                </Link>
-              </motion.div> */}
+           
             </div>
           </motion.div>
         )}

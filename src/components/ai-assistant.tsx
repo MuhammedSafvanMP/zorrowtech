@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Brain, X, Send } from "lucide-react"
+import { MessagesSquare,  MessageSquare,  X, Send } from "lucide-react"
 
 interface Message {
   type: "user" | "bot"
@@ -90,9 +90,9 @@ export function AIAssistant() {
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center border border-white/10 shadow-lg"
+          className="w-16 h-16 rounded-full bg-gradient-to-br from-black/70 via-black/50 to-black/20 text-white flex items-center justify-center border border-white/10 shadow-lg"
         >
-          <Brain className="w-7 h-7" />
+          <MessageSquare  className="w-7 h-7" />
         </motion.button>
       </motion.div>
 
@@ -108,7 +108,7 @@ export function AIAssistant() {
             {/* Header */}
             <div className="flex justify-between items-center px-4 py-3 border-b border-white/10 bg-black">
               <div className="flex items-center gap-2 text-white font-semibold">
-                <Brain className="w-5 h-5" /> Zorrow AI
+                <MessagesSquare  className="w-5 h-5" /> Zorrow AI
               </div>
               <button
                 onClick={() => setIsOpen(false)}

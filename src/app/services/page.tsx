@@ -4,8 +4,15 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Code, Smartphone, Cloud, Brain, ArrowRight, CheckCircle, Cpu } from "lucide-react"
-// import { Scene3D } from "@/components/3d-scene"
+import {
+  Code,
+  Smartphone,
+  Cloud,
+  Brain,
+  ArrowRight,
+  CheckCircle,
+  Cpu,
+} from "lucide-react"
 import { AnimatedText, StaggeredText } from "@/components/animated-text"
 
 export default function ServicesPage() {
@@ -13,7 +20,8 @@ export default function ServicesPage() {
     {
       icon: <Code className="w-10 h-10" />,
       title: "AI-Powered Web Development",
-      description: "Next-generation web applications with integrated AI capabilities that scale to millions of users",
+      description:
+        "Next-generation web applications with integrated AI capabilities that scale to millions of users",
       features: [
         "React & Next.js 14",
         "AI Integration",
@@ -23,13 +31,18 @@ export default function ServicesPage() {
         "Advanced SEO",
       ],
       gradient: "from-blue-600 via-cyan-600 to-teal-600",
-      stats: { projects: "200+", satisfaction: "99%", performance: "3x faster" },
+      stats: {
+        projects: "200+",
+        satisfaction: "99%",
+        performance: "3x faster",
+      },
       price: "Starting at $15,000",
     },
     {
       icon: <Smartphone className="w-10 h-10" />,
       title: "Cross-Platform Mobile Apps",
-      description: "Native performance with cross-platform efficiency for iOS and Android platforms",
+      description:
+        "Native performance with cross-platform efficiency for iOS and Android platforms",
       features: [
         "React Native",
         "Flutter",
@@ -39,22 +52,39 @@ export default function ServicesPage() {
         "Offline Support",
       ],
       gradient: "from-purple-600 via-pink-600 to-rose-600",
-      stats: { downloads: "5M+", rating: "4.9★", platforms: "iOS & Android" },
+      stats: {
+        downloads: "5M+",
+        rating: "4.9★",
+        platforms: "iOS & Android",
+      },
       price: "Starting at $25,000",
     },
     {
       icon: <Cloud className="w-10 h-10" />,
       title: "Cloud & DevOps Solutions",
-      description: "Scalable infrastructure with automated deployment and monitoring systems",
-      features: ["AWS/Azure/GCP", "Kubernetes", "CI/CD Pipelines", "Monitoring", "Auto-scaling", "Security"],
+      description:
+        "Scalable infrastructure with automated deployment and monitoring systems",
+      features: [
+        "AWS/Azure/GCP",
+        "Kubernetes",
+        "CI/CD Pipelines",
+        "Monitoring",
+        "Auto-scaling",
+        "Security",
+      ],
       gradient: "from-green-600 via-emerald-600 to-teal-600",
-      stats: { uptime: "99.9%", scale: "1M+ users", deployment: "10x faster" },
+      stats: {
+        uptime: "99.9%",
+        scale: "1M+ users",
+        deployment: "10x faster",
+      },
       price: "Starting at $10,000",
     },
     {
       icon: <Brain className="w-10 h-10" />,
       title: "AI & Machine Learning",
-      description: "Custom AI solutions for business automation and intelligent decision making",
+      description:
+        "Custom AI solutions for business automation and intelligent decision making",
       features: [
         "Custom Models",
         "NLP Processing",
@@ -64,7 +94,11 @@ export default function ServicesPage() {
         "Data Science",
       ],
       gradient: "from-orange-600 via-red-600 to-pink-600",
-      stats: { accuracy: "95%+", models: "50+", automation: "80% reduction" },
+      stats: {
+        accuracy: "95%+",
+        models: "50+",
+        automation: "80% reduction",
+      },
       price: "Starting at $30,000",
     },
   ]
@@ -97,19 +131,24 @@ export default function ServicesPage() {
   ]
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919876543210", "_blank") // ✅ replace with your WhatsApp number
+    window.open("https://wa.me/919876543210", "_blank")
   }
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
-      {/* Hero Section */}
-        <div className="absolute inset-0 opacity-30">
-          {/* <Scene3D  /> */}
-        </div>
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 from-black via-black/40 to-black" />
+    <div className="relative min-h-screen text-white overflow-hidden pt-20">
+      {/* ✅ Fixed background image */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/banner-2.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-md"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Hero Section */}
+      <section className="py-32 relative z-10">
+        <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,17 +159,24 @@ export default function ServicesPage() {
               <Cpu className="w-4 h-4 mr-2" />
               Our Services
             </Badge>
-            <StaggeredText text="What We Create" className="text-5xl md:text-7xl font-bold mb-8" />
-            <AnimatedText delay={1} className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Comprehensive technology solutions that drive innovation and accelerate business growth through
-              cutting-edge development and AI integration
+            <StaggeredText
+              text="What We Create"
+              className="text-5xl md:text-7xl font-bold mb-8"
+            />
+            <AnimatedText
+              delay={1}
+              className="text-xl text-gray-300 max-w-4xl mx-auto"
+            >
+              Comprehensive technology solutions that drive innovation and
+              accelerate business growth through cutting-edge development and AI
+              integration
             </AnimatedText>
           </motion.div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section className="py-20 relative z-10">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
@@ -142,7 +188,7 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.02, rotateX: 2 }}
                 className="group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/90 to-black/90 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                <Card className="h-full bg-gradient-to-br from-black/70 via-black/50 to-black/20 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8">
                     <div className="flex items-start justify-between mb-6">
                       <motion.div
@@ -151,17 +197,26 @@ export default function ServicesPage() {
                       >
                         {service.icon}
                       </motion.div>
-                      <Badge className={`bg-gradient-to-r ${service.gradient} text-white border-0`}>
+                      <Badge
+                        className={`bg-gradient-to-r ${service.gradient} text-white border-0`}
+                      >
                         {service.price}
                       </Badge>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed text-lg">{service.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 mb-6 leading-relaxed text-lg">
+                      {service.description}
+                    </p>
 
                     <div className="grid grid-cols-2 gap-3 mb-6">
                       {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-gray-300">
+                        <div
+                          key={idx}
+                          className="flex items-center text-gray-300"
+                        >
                           <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
                           <span className="text-sm">{feature}</span>
                         </div>
@@ -176,7 +231,9 @@ export default function ServicesPage() {
                           >
                             {value}
                           </div>
-                          <div className="text-xs text-gray-400 capitalize">{key}</div>
+                          <div className="text-xs text-gray-400 capitalize">
+                            {key}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -196,10 +253,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-32 relative">
-            <div className="absolute inset-0 opacity-30">
-          {/* <Scene3D  /> */}
-        </div>
+      <section className="py-32 relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -207,9 +261,13 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <StaggeredText text="Our Process" className="text-5xl md:text-6xl font-bold mb-8" />
+            <StaggeredText
+              text="Our Process"
+              className="text-5xl md:text-6xl font-bold mb-8"
+            />
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A proven methodology that ensures successful project delivery and exceptional results
+              A proven methodology that ensures successful project delivery and
+              exceptional results
             </p>
           </motion.div>
 
@@ -223,11 +281,17 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.05 }}
                 className="text-center group"
               >
-                <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-3xl p-8 h-full group-hover:border-white/30 transition-all duration-500">
-                  <div className="text-6xl font-bold text-white mb-4">{step.step}</div>
-                  <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
+                <div className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border-white/10 rounded-3xl p-8 h-full group-hover:border-white/30 transition-all duration-500">
+                  <div className="text-6xl font-bold text-white mb-4">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    {step.title}
+                  </h3>
                   <p className="text-gray-300 mb-4">{step.description}</p>
-                  <Badge className="bg-black text-white border border-white/20">{step.duration}</Badge>
+                  <Badge className="bg-black text-white border border-white/20">
+                    {step.duration}
+                  </Badge>
                 </div>
               </motion.div>
             ))}

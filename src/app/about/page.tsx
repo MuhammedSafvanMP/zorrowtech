@@ -4,20 +4,23 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, TrendingUp, Shield, Rocket } from "lucide-react";
-// import {  Scene3D } from "@/components/3d-scene";
 import { StaggeredText } from "@/components/animated-text";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
-      {/* Hero Section */}
-        <div className="absolute inset-0 opacity-30">
-          {/* <Scene3D /> */}
-        </div>
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />
+    <div className="relative min-h-screen text-white overflow-hidden">
+      {/* ✅ Fixed background image */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/banner-2.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-md"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-32 relative z-10">
+        <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +41,7 @@ export default function AboutPage() {
               transition={{ delay: 1, duration: 0.8 }}
               className="text-xl md:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed"
             >
-              At Zorrow Tech, we're passionate about transforming businesses
+              At Zorrow Tech, we&apos;re passionate about transforming businesses
               through technology. Our team of experts combines innovation with
               practical solutions to help you stay ahead in the digital age.
               With a focus on quality and customer satisfaction, we deliver
@@ -78,7 +81,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 className="group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/80 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                <Card className="h-full bg-gradient-to-br from-black/70 via-black/50 to-black/20 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 text-center relative">
                     <motion.div
                       whileHover={{ rotate: 360 }}
