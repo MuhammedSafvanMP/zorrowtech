@@ -4,17 +4,17 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Users, Linkedin, Twitter, Github } from "lucide-react"
+import { Users, Linkedin,  Github, Instagram } from "lucide-react"
 // import { Scene3D } from "@/components/3d-scene"
 import { StaggeredText } from "@/components/animated-text"
 
 export default function TeamPage() {
- const team = [
+  const team = [
     {
-      name: "Alex Rodriguez",
+      name: "Muhammed Farhan",
       role: "CEO & Co-Founder",
       image: "/placeholder.svg?height=500&width=400",
-      bio: "Former Google Principal Engineer with 12+ years building products used by billions. Led teams that developed core infrastructure serving 2B+ users daily.",
+      bio: "Entrepreneur with a strong focus on business growth and scaling tech solutions. Skilled in building teams, driving innovation, and setting strategic vision for long-term success.",
       expertise: [
         "Strategic Vision",
         "Product Development",
@@ -23,74 +23,61 @@ export default function TeamPage() {
         "Scalable Systems",
         "Business Growth",
       ],
-      achievements: ["Ex-Google Principal Engineer", "Stanford CS PhD", "Forbes 30 Under 30", "TEDx Speaker"],
-      social: { linkedin: "#", twitter: "#", github: "#" },
-      stats: { experience: "12+ years", projects: "100+", teams: "50+ people" },
+      achievements: ["Business Leader", "Tech Innovator"],
+      social: { linkedin: "#", instagram: "#", github: "#" },
+      stats: { experience: "4+ years" },
     },
     {
-      name: "Sarah Chen",
-      role: "CTO & Co-Founder",
+      name: "Anu",
+      role: "Sales & Marketing Director",
       image: "/placeholder.svg?height=500&width=400",
-      bio: "Ex-Microsoft Principal Architect specializing in distributed systems and AI. Built cloud infrastructure that processes 10TB+ data daily.",
-      expertise: ["System Architecture", "Cloud Computing", "AI/ML", "Security", "DevOps", "Data Engineering"],
-      achievements: ["Ex-Microsoft Principal", "MIT PhD Computer Science", "AWS Certified", "Open Source Contributor"],
-      social: { linkedin: "#", twitter: "#", github: "#" },
-      stats: { experience: "10+ years", systems: "Enterprise scale", certifications: "15+" },
+      bio: "Marketing strategist experienced in digital campaigns, brand positioning, and scaling business reach. Specialized in SEO, Google Ads, and content strategies that drive measurable growth.",
+      expertise: ["Google ads", "SEO", "Content Marketing", "Brand Strategy"],
+      achievements: ["Marketing Specialist", "Brand Growth Expert"],
+      social: { linkedin: "#", instagram: "#", github: "#" },
+      stats: { experience: "2+ years", systems: "Enterprise scale", certifications: "15+" },
     },
     {
-      name: "Marcus Johnson",
-      role: "Head of Design & UX",
+      name: "Muhammed Thasleem",
+      role: "Full Stack Developer & Trainer",
       image: "/placeholder.svg?height=500&width=400",
-      bio: "Award-winning designer from Apple's Human Interface team. Created design systems used by millions of users across multiple platforms.",
-      expertise: ["UX/UI Design", "Design Systems", "User Research", "Prototyping", "Brand Identity", "Accessibility"],
-      achievements: ["Ex-Apple Design Team", "Design Awards Winner", "IDEO Alumni", "Design Mentor"],
-      social: { linkedin: "#", twitter: "#", github: "#" },
-      stats: { experience: "8+ years", designs: "200+ products", awards: "25+" },
+      bio: "Experienced full stack engineer and trainer with a passion for building scalable web and mobile applications. Skilled in MERN, Python, Java, and React Native with a track record of mentoring teams.",
+      expertise: ["MERN", "Python", "Java", "React Native"],
+      achievements: ["Senior Engineer", "Team Leader", "Tech Conference Speaker", "Open Source Contributor"],
+      social: { linkedin: "#", instagram: "#", github: "#" },
+      stats: { experience: "3+ years", projects: "15+", teams: "15+" },
     },
     {
-      name: "Emily Zhang",
-      role: "Head of AI & Data Science",
+      name: "Muhammed Safvan MP",
+      role: "Full Stack Developer & Trainer",
       image: "/placeholder.svg?height=500&width=400",
-      bio: "PhD in Machine Learning from Stanford. Former Tesla AI researcher who developed autonomous driving algorithms and computer vision systems.",
-      expertise: ["Machine Learning", "Computer Vision", "NLP", "Data Science", "Deep Learning", "AI Research"],
-      achievements: ["Stanford PhD ML", "Ex-Tesla AI Team", "Research Publications", "AI Conference Speaker"],
-      social: { linkedin: "#", twitter: "#", github: "#" },
-      stats: { experience: "9+ years", models: "50+ AI models", papers: "20+ published" },
+      bio: "MERN stack developer passionate about building modern web applications and cloud solutions. Skilled in Next.js, AWS, and React Native with hands-on experience delivering impactful projects.",
+      expertise: ["MERN", "AWS", "React Native", "Blender", "Next.js"],
+      achievements: ["Senior Engineer", "Team Leader", "Tech Conference Speaker", "Open Source Contributor"],
+      social: { linkedin: "#", instagram: "#", github: "#" },
+      stats: { experience: "3+ years", projects: "20+", teams: "10+" },
     },
     {
-      name: "David Kim",
-      role: "Head of Mobile Development",
+      name: "Anshad UK",
+      role: "Python Django Developer",
       image: "/placeholder.svg?height=500&width=400",
-      bio: "Mobile development expert with apps downloaded 50M+ times. Former Uber engineer who built real-time location services at global scale.",
-      expertise: [
-        "React Native",
-        "Flutter",
-        "iOS Development",
-        "Android Development",
-        "Mobile Architecture",
-        "Performance",
-      ],
-      achievements: ["Ex-Uber Senior Engineer", "50M+ App Downloads", "Mobile Expert", "Tech Conference Speaker"],
-      social: { linkedin: "#", twitter: "#", github: "#" },
-      stats: { experience: "7+ years", downloads: "50M+", apps: "100+" },
+      bio: "Backend-focused developer with expertise in Python and Django. Experienced in building scalable web applications, customizing Odoo solutions, and delivering high-quality software for businesses.",
+      expertise: ["Python", "React", "Django", "Web Development", "Odoo Development"],
+      achievements: ["Senior Engineer", "Web Expert", "Tech Conference Speaker"],
+      social: { linkedin: "#", instagram: "#", github: "#" },
+      stats: { experience: "3+ years", projects: "10+", teams: "5+" },
     },
     {
-      name: "Lisa Wang",
-      role: "Head of Cloud & DevOps",
+      name: "Nihal",
+      role: "UI/UX Designer & Video Editor",
       image: "/placeholder.svg?height=500&width=400",
-      bio: "Cloud infrastructure specialist from Amazon Web Services. Built systems that handle Black Friday traffic spikes and maintain 99.99% uptime.",
-      expertise: ["AWS/Azure/GCP", "Kubernetes", "DevOps", "Infrastructure", "Security", "Monitoring"],
-      achievements: [
-        "Ex-AWS Solutions Architect",
-        "Cloud Certifications",
-        "DevOps Expert",
-        "Infrastructure Specialist",
-      ],
-      social: { linkedin: "#", twitter: "#", github: "#" },
-      stats: { experience: "6+ years", uptime: "99.99%", deployments: "1000+" },
+      bio: "Creative UI/UX designer and video editor with a strong eye for detail. Experienced in creating intuitive designs, engaging visuals, and brand-focused content that connects with audiences.",
+      expertise: ["Figma", "Video Editing", "UI/UX Design", "Branding", "Prototyping"],
+      achievements: ["Design System Creator", "Design Conference Speaker"],
+      social: { linkedin: "#", instagram: "#", github: "#" },
+      stats: { experience: "2+ years", projects: "16+", teams: "5+" },
     },
-  ]
-
+  ];
 
   return (
     <div className="relative min-h-screen text-white overflow-hidden pt-20">
@@ -205,8 +192,8 @@ export default function TeamPage() {
                           color: "hover:text-blue-400",
                         },
                         {
-                          icon: <Twitter className="w-5 h-5" />,
-                          href: member.social.twitter,
+                          icon: <Instagram className="w-5 h-5" />,
+                          href: member.social.instagram,
                           color: "hover:text-sky-400",
                         },
                         {
