@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Zorrow Tech - Build The Future",
   description: "Transforming ideas into digital reality with cutting-edge technology",
+     icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
