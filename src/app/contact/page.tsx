@@ -569,9 +569,9 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="text-gray-500 text-sm">
-              © 2024 Zorrow Tech IT Solutions. All rights reserved.
-            </div>
+          <div className="text-gray-500 text-sm">
+  © {new Date().getFullYear()} Zorrow Tech IT Solutions. All rights reserved.
+</div>
           </div>
         </div>
       </footer>

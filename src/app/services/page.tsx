@@ -131,7 +131,7 @@ export default function ServicesPage() {
   ]
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919876543210", "_blank")
+    window.open("https://wa.me/7994960686", "_blank")
   }
 
   return (
