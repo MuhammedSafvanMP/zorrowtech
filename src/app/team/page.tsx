@@ -122,7 +122,7 @@ export default function TeamPage() {
     instagram: "",
     github: ""
   },
-  email: "syamlal@gmail.com",
+  email: "syamlalktkl@gmail.com",
   phone: "9072432327",
   place: "Malappuram, Kerala"
 }
