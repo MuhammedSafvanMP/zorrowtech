@@ -4,232 +4,291 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Users, Linkedin,  Github, Instagram } from "lucide-react"
-// import { Scene3D } from "@/components/3d-scene"
-import { StaggeredText } from "@/components/animated-text"
+import {
+  Users,
+  Linkedin,
+  Github,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  Sparkles,
+} from "lucide-react"
+import Link from "next/link"
 
 export default function TeamPage() {
-  const team = [
+   const team = [
     {
-      name: "Muhammed Farhan",
-      role: "CEO & Co-Founder",
-      image: "/placeholder.svg?height=500&width=400",
-      bio: "Entrepreneur with a strong focus on business growth and scaling tech solutions. Skilled in building teams, driving innovation, and setting strategic vision for long-term success.",
-      expertise: [
-        "Strategic Vision",
-        "Team Leadership",
-        "Business Growth",
-      ],
-      achievements: ["Business Leader", "Tech Innovator"],
-      social: { linkedin: "#", instagram: "#", github: "#" },
-      stats: { experience: "4+ years" },
+      name: "Fathima Minsha K",
+      role: "HR Manager",
+      image: "/minsha.jpeg",
+      bio: "Dedicated HR Manager responsible for recruitment and employee coordination.",
+      expertise: ["Recruitment", "Onboarding", "HR Management"],
+      social: { linkedin: "", instagram: "minsha", github: "" },
+      email: "minsha@gmail.com",
+      phone: "7994960686",
+      place: "Malappuram, Kerala",
     },
     {
-      name: "Anu",
-      role: "Sales & Marketing Director",
-      image: "/placeholder.svg?height=500&width=400",
-      bio: "Marketing strategist experienced in digital campaigns, brand positioning, and scaling business reach. Specialized in SEO, Google Ads, and content strategies that drive measurable growth.",
-      expertise: ["Google ads", "SEO", "Content Marketing", "Brand Strategy"],
-      achievements: ["Marketing Specialist", "Brand Growth Expert"],
-      social: { linkedin: "#", instagram: "#", github: "#" },
-      stats: { experience: "2+ years", systems: "Enterprise scale", certifications: "15+" },
+      name: "Anjana Pambalath",
+      role: "Marketing Manager",
+      image: "/anjana.jpeg",
+      bio: "Handles marketing strategies and digital coordination.",
+      expertise: ["Marketing", "Social Media", "Client Handling"],
+      social: {
+        linkedin:
+          "https://www.linkedin.com/in/anjana-pambalath-1548a330b",
+        instagram: "anjana_pambalath",
+        github: "",
+      },
+      email: "anjanapambalath@gmail.com",
+      phone: "9633294701",
+      place: "Malappuram, Kerala",
     },
     {
-      name: "Muhammed Safvan MP",
-      role: "Software Engineer",
-      image: "/placeholder.svg?height=500&width=400",
-      bio: "MERN stack developer passionate about building modern web applications and cloud solutions. Skilled in Next.js, AWS, Flutter and React Native with hands-on experience delivering impactful projects.",
-      expertise: ["MERN", "AWS", "React Native", "Blender", "Next.js"],
-      achievements: ["Senior Engineer", "Team Leader", "Tech Conference Speaker", "Open Source Contributor"],
-      social: { linkedin: "#", instagram: "#", github: "#" },
-      stats: { experience: "3+ years", projects: "20+", teams: "10+" },
+      name: "Suhaila Thasni",
+      role: "Full-Stack Developer",
+      image: "/suhaila.png",
+      bio: "MERN stack developer specialized in scalable applications.",
+      expertise: ["MERN", "AWS", "Next.js", "TypeScript"],
+      social: {
+        linkedin:
+          "https://www.linkedin.com/in/suhaila-thasni-dev/",
+        instagram: "_thas_nii_0",
+        github: "https://github.com/suhaila-thasni",
+      },
+      email: "suhailathasni0@gmail.com",
+      phone: "9633294701",
+      place: "Malappuram, Kerala",
     },
-  ];
+    {
+      name: "Shana Yasmin",
+      role: "Full-Stack Developer",
+      image: "/shana.jpeg",
+      bio: "Builds modern scalable web applications.",
+      expertise: ["MERN", "Next.js", "AWS"],
+      social: {
+        linkedin:
+          "https://www.linkedin.com/in/shana-yasmin-449bb932b",
+        instagram: "yasmin_shaa_",
+        github: "https://github.com/Shanayasmin123",
+      },
+      email: "shanayasmin219@gmail.com",
+      phone: "8714200361",
+      place: "Malappuram, Kerala",
+    },
+    {
+      name: "AYISHA SAFNA",
+      role: "Full-Stack Developer",
+      image: "/ayisha.jpeg",
+      bio: "Full-stack developer focused on modern web apps.",
+      expertise: ["MERN", "Next.js", "TypeScript"],
+      social: {
+        linkedin:
+          "https://www.linkedin.com/in/ayisha-safna-2591b0294",
+        instagram: "_thas_nii_0",
+        github: "https://github.com/Ayshasafna8137",
+      },
+      email: "ayishasafna098@gmail.com",
+      phone: "8137950410",
+      place: "Malappuram, Kerala",
+    },
+    {
+      name: "SAHAL V.K",
+      role: "Creative Designer",
+      image: "/sahal.jpeg",
+      bio: "Creative designer and video editor.",
+      expertise: ["Design", "Video Editing", "Content Creation"],
+      social: { linkedin: "", instagram: "sahal._.shax", github: "" },
+      email: "sahalvkmazin@gmail.com",
+      phone: "6282017941",
+      place: "Malappuram, Kerala",
+    },
+     {
+  name: "Syamlal A.P",
+  role: "Business Development Executive",
+  image: "/syam.jpeg",
+  bio: "Business Development Executive focused on driving company growth by identifying new business opportunities.",
+  expertise: [
+    "Business Development",
+    "Client Relationship Management",
+    "Market Research",
+    "Sales Strategy",
+    "Communication",
+  ],
+  social: {
+    linkedin: "",
+    instagram: "",
+    github: ""
+  },
+  email: "syamlal@gmail.com",
+  phone: "9072432327",
+  place: "Malappuram, Kerala"
+}
+  ]
+
+  const getInstagram = (value: string) => {
+    if (!value) return ""
+    if (value.startsWith("http")) return value
+    return `https://instagram.com/${value}`
+  }
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden pt-20">
-      {/* ✅ Fixed background image */}
+    <div className="relative min-h-screen text-white overflow-hidden">
+
+      {/* BACKGROUND */}
       <div className="fixed inset-0 -z-10">
         <img
           src="/banner-2.png"
-          alt="Background"
-          className="w-full h-full object-cover blur-md"
+          className="w-full h-full object-cover"
+          alt="bg"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/80" />
       </div>
 
-      {/* Hero Section */}
-      <section className="py-32 relative z-10 overflow-hidden">
-        <div className="absolute inset-0" />
+      {/* HERO */}
+      <section className="pt-28 pb-14 text-center">
+        <Badge className="bg-purple-500/20 text-purple-200 border-purple-500/30 px-4 py-2 mb-6">
+          <Users className="w-4 h-4 mr-2" />
+          Our Team
+        </Badge>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <Badge className="bg-black text-white border border-white/20 mb-6 px-4 py-2">
-              <Users className="w-4 h-4 mr-2" />
-              Leadership Team
-            </Badge>
-            <StaggeredText
-              text="Meet The Visionaries"
-              className="text-5xl md:text-7xl font-bold mb-8"
-            />
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="text-xl text-gray-300 max-w-4xl mx-auto"
-            >
-              Industry veterans who've built products used by billions at the world's leading tech companies. Our diverse team brings together expertise from Google, Microsoft, Apple, Tesla, and more.
-            </motion.p>
-          </motion.div>
-        </div>
+        <h1 className="text-5xl font-bold text-white mb-4">
+          Meet Our Experts
+        </h1>
+
+        <p className="text-gray-300">
+          A passionate team building modern digital solutions.
+        </p>
       </section>
 
-      {/* Team Grid */}
-      <section className="py-20 relative z-10">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.8 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="group team-card"
-              >
-                <Card className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border-white/10 hover:border-white/30 transition-all duration-500 backdrop-blur-sm overflow-hidden">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-                    <div className="absolute top-4 right-4 flex flex-wrap gap-2">
-                      {member.achievements.slice(0, 2).map((achievement, idx) => (
-                        <Badge
-                          key={idx}
-                          className="bg-black/50 text-white border-white/20 backdrop-blur-sm text-xs"
-                        >
-                          {achievement}
-                        </Badge>
-                      ))}
-                    </div>
+      {/* GRID */}
+      <section className="px-6 pb-20">
+        <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {team.map((member, i) => (
+            <motion.div key={i} whileHover={{ y: -5 }}>
+
+              <Card className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl">
+
+                {/* IMAGE FIXED (NO GAP) */}
+                <div className="relative w-full aspect-[4/5] overflow-hidden">
+
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+
+                  {/* SOCIAL ICONS */}
+                  <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition flex items-center justify-center gap-4">
+
+                    {member.social.linkedin && (
+                      <a
+                        href={member.social.linkedin}
+                        target="_blank"
+                        className="p-2 bg-white/10 rounded-full hover:bg-blue-600"
+                      >
+                        <Linkedin size={18} />
+                      </a>
+                    )}
+
+                    {member.social.instagram && (
+                      <a
+                        href={getInstagram(member.social.instagram)}
+                        target="_blank"
+                        className="p-2 bg-white/10 rounded-full hover:bg-pink-600"
+                      >
+                        <Instagram size={18} />
+                      </a>
+                    )}
+
+                    {member.social.github && (
+                      <a
+                        href={member.social.github}
+                        target="_blank"
+                        className="p-2 bg-white/10 rounded-full hover:bg-gray-700"
+                      >
+                        <Github size={18} />
+                      </a>
+                    )}
+
                   </div>
-
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-gray-200 font-semibold mb-4 text-lg">{member.role}</p>
-                    <p className="text-gray-300 mb-6 leading-relaxed">{member.bio}</p>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-white/5 rounded-xl">
-                      {Object.entries(member.stats).map(([key, value], idx) => (
-                        <div key={idx} className="text-center">
-                          <div className="text-lg font-bold text-white">{value}</div>
-                          <div className="text-xs text-gray-400 capitalize">{key}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Expertise */}
-                    <div className="grid grid-cols-2 gap-2 mb-6">
-                      {member.expertise.map((skill, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className="bg-white/10 text-white border-white/20 text-xs justify-center"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="flex gap-3">
-                      {[
-                        {
-                          icon: <Linkedin className="w-5 h-5" />,
-                          href: member.social.linkedin,
-                          color: "hover:text-blue-400",
-                        },
-                        {
-                          icon: <Instagram className="w-5 h-5" />,
-                          href: member.social.instagram,
-                          color: "hover:text-sky-400",
-                        },
-                        {
-                          icon: <Github className="w-5 h-5" />,
-                          href: member.social.github,
-                          color: "hover:text-gray-300",
-                        },
-                      ].map((social, idx) => (
-                        <motion.div key={idx} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            className={`text-gray-400 ${social.color} hover:bg-white/10 rounded-xl p-3`}
-                          >
-                            {social.icon}
-                          </Button>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Stats */}
-      <section className="py-32 relative z-10">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <StaggeredText
-              text="Our Collective Impact"
-              className="text-4xl md:text-6xl font-bold mb-8"
-            />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "50+", label: "Years Combined Experience", icon: "🎯" },
-              { number: "2B+", label: "Users Impacted", icon: "👥" },
-              { number: "500M+", label: "App Downloads", icon: "📱" },
-              { number: "99.9%", label: "System Uptime", icon: "⚡" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.05 }}
-                className="text-center"
-              >
-                <div className="bg-gradient-to-br from-black/70 via-black/50 to-black/20 border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500">
-                  <div className="text-4xl mb-4">{stat.icon}</div>
-                  <div className="text-4xl font-bold text-white mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-400 font-medium">{stat.label}</div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                {/* CONTENT FIXED VISIBILITY */}
+                <CardContent className="p-5">
+
+                  {/* NAME FIX (VISIBLE ALWAYS) */}
+                  <h3 className="text-xl font-bold text-white">
+                    {member.name}
+                  </h3>
+
+                  <p className="text-purple-400 text-sm mb-2">
+                    {member.role}
+                  </p>
+
+                  <p className="text-gray-300 text-sm mb-4">
+                    {member.bio}
+                  </p>
+
+                  {/* SKILLS */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {member.expertise.map((e, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-purple-500/20 text-purple-200 px-2 py-1 rounded-full"
+                      >
+                        {e}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CONTACT */}
+                  <div className="text-xs text-gray-300 space-y-2 border-t border-white/10 pt-4">
+
+                    <div className="flex items-center gap-2">
+                      <Mail size={14} />
+                      {member.email}
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <Phone size={14} />
+                      {member.phone}
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <MapPin size={14} />
+                      {member.place}
+                    </div>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+            </motion.div>
+          ))}
+
         </div>
       </section>
+
+      {/* CTA */}
+      <section className="text-center pb-20">
+        <Sparkles className="mx-auto text-purple-400 mb-4" />
+        <h2 className="text-3xl font-bold mb-2 text-white">
+          Want to Join Our Team?
+        </h2>
+        <p className="text-gray-400 mb-6">
+          We're always looking for talented people.
+        </p>
+
+        <Link href={'/careers'} className="bg-purple-600 hover:bg-purple-700 px-8 py-5 rounded-xl">
+          View Open Positions
+        </Link>
+      </section>
+
     </div>
   )
 }
