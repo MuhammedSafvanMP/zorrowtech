@@ -104,6 +104,7 @@ export default function TeamPage() {
       phone: "6282017941",
       place: "Malappuram, Kerala",
     },
+    
      {
   name: "Syamlal A.P",
   role: "Business Development Executive",
