@@ -29,22 +29,7 @@ export default function TeamPage() {
       phone: "7994960686",
       place: "Malappuram, Kerala",
     },
-    {
-      name: "Anjana Pambalath",
-      role: "Marketing Manager",
-      image: "/anjana.jpeg",
-      bio: "Handles marketing strategies and digital coordination.",
-      expertise: ["Marketing", "Social Media", "Client Handling"],
-      social: {
-        linkedin:
-          "https://www.linkedin.com/in/anjana-pambalath-1548a330b",
-        instagram: "anjana_pambalath",
-        github: "",
-      },
-      email: "anjanapambalath@gmail.com",
-      phone: "9633294701",
-      place: "Malappuram, Kerala",
-    },
+
     {
       name: "Suhaila Thasni",
       role: "Full-Stack Developer",
@@ -93,39 +78,9 @@ export default function TeamPage() {
       phone: "8137950410",
       place: "Malappuram, Kerala",
     },
-    {
-      name: "SAHAL V.K",
-      role: "Creative Designer",
-      image: "/sahal.jpeg",
-      bio: "Creative designer and video editor.",
-      expertise: ["Design", "Video Editing", "Content Creation"],
-      social: { linkedin: "", instagram: "sahal._.shax", github: "" },
-      email: "sahalvkmazin@gmail.com",
-      phone: "6282017941",
-      place: "Malappuram, Kerala",
-    },
+
     
-     {
-  name: "Syamlal A.P",
-  role: "Business Development Executive",
-  image: "/syam.jpeg",
-  bio: "Business Development Executive focused on driving company growth by identifying new business opportunities.",
-  expertise: [
-    "Business Development",
-    "Client Relationship Management",
-    "Market Research",
-    "Sales Strategy",
-    "Communication",
-  ],
-  social: {
-    linkedin: "",
-    instagram: "",
-    github: ""
-  },
-  email: "syamlalktkl@gmail.com",
-  phone: "9072432327",
-  place: "Malappuram, Kerala"
-}
+   
   ]
 
   const getInstagram = (value: string) => {
