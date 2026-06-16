@@ -81,9 +81,9 @@ export default function TeamPage() {
 
      {
       name: "Nihal",
-      role: "Product & UI/UX designer",
+      role: "Product & UI/UX Designer",
       image: "/Nihal.jpeg",
-      bio: "UI/UX Developer focused on modern, user-friendly interfaces.",
+      bio: "UI/UX Designer focused on modern, user-friendly interfaces.",
       expertise: ["Figma", "FigJam", "Framer", "Adobe CC"],
       social: {
         linkedin:
