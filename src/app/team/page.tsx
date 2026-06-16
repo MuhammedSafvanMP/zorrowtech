@@ -19,14 +19,14 @@ import Link from "next/link"
 export default function TeamPage() {
    const team = [
     {
-      name: "Fathima Minsha K",
+      name: "Rifa Sherin. K",
       role: "HR Manager",
-      image: "/minsha.jpeg",
+      image: "/Rifa.jpeg",
       bio: "Dedicated HR Manager responsible for recruitment and employee coordination.",
       expertise: ["Recruitment", "Onboarding", "HR Management"],
       social: { linkedin: "", instagram: "minsha", github: "" },
-      email: "minsha@gmail.com",
-      phone: "7994960686",
+      email: "hrzorrowtech@gmail.com",
+      phone: "9567369567",
       place: "Malappuram, Kerala",
     },
 
@@ -71,11 +71,64 @@ export default function TeamPage() {
       social: {
         linkedin:
           "https://www.linkedin.com/in/ayisha-safna-2591b0294",
-        instagram: "_thas_nii_0",
+        instagram: "https://www.instagram.com/ayshaa.aa__?igsh=MXN4NXR2bzRwcXFoMA%3D%3D&utm_source=qr",
         github: "https://github.com/Ayshasafna8137",
       },
       email: "ayishasafna098@gmail.com",
       phone: "8137950410",
+      place: "Malappuram, Kerala",
+    },
+
+     {
+      name: "Nihal",
+      role: "UI/UX Developer",
+      image: "/Nihal.jpeg",
+      bio: "UI/UX Developer focused on modern, user-friendly interfaces.",
+      expertise: ["Figma", "Adobe", "FigJam", "Framer", "Adobe CC"],
+      social: {
+        linkedin:
+          "https://www.linkedin.com/in/nihal-k-%E2%80%8E-a600692a5/",
+        instagram: "https://www.instagram.com/nihueyyy/",
+        Behance: "https://www.behance.net/muhammednihu",
+      },
+      email: "nihalk4543@gmail.com",
+      phone: "8129666583",
+      place: "Kannur, Kerala",
+    },
+
+
+     {
+      name: "Jafna Fathima",
+      role: "Flutter Developer",
+      image: "/Jafna.png",
+      bio: "Flutter Developer specializing in modern, responsive, and user-friendly mobile applications.",
+      expertise: ["Flutter", "Dart", "Firebase", "Android", "IOS"],
+      social: {
+        linkedin:
+          "www.linkedin.com/in/fathimajafna01",
+        instagram: "https://www.instagram.com/jaffnaaa?igsh=MTJobHAya2lic3NpMw==",
+        github: "https://github.com/jafnafathima2004",
+      },
+      email: "jafnafathima01@gmail.com",
+      phone: "9747096518",
+      place: "Malappuram, Kerala",
+    },
+
+
+     {
+      name: "Faiha CK",
+      role: "Flutter Developer",
+      image: "/Faiha.jpg",
+      bio: "Flutter Developer crafting beautiful, scalable, and user-friendly mobile interfaces.",
+      expertise: ["Flutter", "Dart", "Firebase", "Android", "IOS"],
+      social: {
+        linkedin:
+          "www.linkedin.com/in/faiha-ck-627726368",
+        instagram: "https://www.instagram.com/faiha._?igsh=MTJpa3U0czYwOGtuaw==",
+        github: "https://github.com/faiha7038-bit",
+      },
+      email: "faiha7038@gmail.com",
+      phone: "6235107038",
       place: "Malappuram, Kerala",
     },
 
