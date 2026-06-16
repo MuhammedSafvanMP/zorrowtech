@@ -24,7 +24,7 @@ export default function TeamPage() {
       image: "/Rifa.jpeg",
       bio: "Dedicated HR Manager responsible for recruitment and employee coordination.",
       expertise: ["Recruitment", "Onboarding", "HR Management"],
-      social: { linkedin: "", instagram: "minsha", github: "" },
+      social: { linkedin: "", instagram: "", github: "" },
       email: "hrzorrowtech@gmail.com",
       phone: "9567369567",
       place: "Malappuram, Kerala",
@@ -89,7 +89,7 @@ export default function TeamPage() {
         linkedin:
           "https://www.linkedin.com/in/nihal-k-%E2%80%8E-a600692a5/",
         instagram: "https://www.instagram.com/nihueyyy/",
-        Behance: "https://www.behance.net/muhammednihu",
+        github: "https://www.behance.net/muhammednihu",
       },
       email: "nihalk4543@gmail.com",
       phone: "8129666583",
@@ -98,14 +98,14 @@ export default function TeamPage() {
 
 
      {
-      name: "Jafna Fathima",
+      name: "Fathima Jafna",
       role: "Flutter Developer",
       image: "/Jafna.png",
       bio: "Flutter Developer specializing in modern, responsive, and user-friendly mobile applications.",
       expertise: ["Flutter", "Dart", "Firebase", "Android", "IOS"],
       social: {
         linkedin:
-          "www.linkedin.com/in/fathimajafna01",
+          "https://www.linkedin.com/in/fathimajafna01",
         instagram: "https://www.instagram.com/jaffnaaa?igsh=MTJobHAya2lic3NpMw==",
         github: "https://github.com/jafnafathima2004",
       },
@@ -123,7 +123,7 @@ export default function TeamPage() {
       expertise: ["Flutter", "Dart", "Firebase", "Android", "IOS"],
       social: {
         linkedin:
-          "www.linkedin.com/in/faiha-ck-627726368",
+          "https://www.linkedin.com/in/faiha-ck-627726368",
         instagram: "https://www.instagram.com/faiha._?igsh=MTJpa3U0czYwOGtuaw==",
         github: "https://github.com/faiha7038-bit",
       },
