@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
         <head>
-        <AdSense pId="ca-pub-3906185097412947"/>
+        <AdSense pId="3906185097412947"/>
         
       </head>
       <body className={`${inter.className} bg-black text-white overflow-x-hidden`}>
