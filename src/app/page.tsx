@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, Target, Users, Globe } from "lucide-react";
 import Link from "next/link";
+import AdBanner from "@/components/AdBanner";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
+         <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="8212194750"
+              />
+
       {/* ✅ HERO SECTION */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -33,6 +40,9 @@ export default function HomePage() {
               Build The Future
             </h1>
           </motion.div>
+
+
+        
 
           {/* Description */}
           <motion.div
@@ -76,6 +86,16 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+
+   <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="8212194750"
+              />
+
+
+        
 
       {/* ✅ EXPERTISE SECTION */}
       <section className="py-32 relative overflow-hidden">
